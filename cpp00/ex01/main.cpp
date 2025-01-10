@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_phonebook.cpp                                   :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:46:35 by proton            #+#    #+#             */
-/*   Updated: 2025/01/10 16:36:48 by bproton          ###   ########.fr       */
+/*   Created: 2025/01/10 14:14:33 by bproton           #+#    #+#             */
+/*   Updated: 2025/01/10 16:17:31 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_phonebook.hpp"
 
-int	is_empty(class::Contacts contact[])
+int main(void)
 {
-	
-}
+	std::string entry;
 
-void	MyPhonebook::fill_contacts()
-{
-	int	count = 0;
-
-	while (count < 8)
+	while (std::cin >> entry)
 	{
-		if (is_empty(Contacts contact[i]) == -1)
-			continue ;
-		count++;
+		if (entry == "ADD")
+            set_phonebook();
+		else if (entry == "SEARCH")
+			search_contact();
+		else if (entry == "EXIT")
+			return (0);
+		else
+			continue;
 	}
 }
