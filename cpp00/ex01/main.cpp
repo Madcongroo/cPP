@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:14:33 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/10 16:17:31 by bproton          ###   ########.fr       */
+/*   Updated: 2025/01/14 11:21:15 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 int main(void)
 {
 	std::string entry;
+	MyPhonebook phonebook;
 
-	while (std::cin >> entry)
+	while (1)
 	{
+		std::cout << "enter ADD to add a contact, SEARCH to search for a contact, EXIT to quit the progamm" << std::endl;
+
+		std::cin >> entry;
 		if (entry == "ADD")
-            set_phonebook();
+            add_to_contacts(phonebook);
 		else if (entry == "SEARCH")
 			search_contact();
 		else if (entry == "EXIT")
 			return (0);
-		else
-			continue;
 	}
 }

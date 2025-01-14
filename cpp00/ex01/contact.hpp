@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:07:28 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/10 15:57:21 by bproton          ###   ########.fr       */
+/*   Updated: 2025/01/14 11:31:15 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	Contacts
 		std::string	first_name;
 		std::string	last_name;
 		std::string	nickname;
-		int			phone_number;
+		std::string	phone_number;
 		std::string	darkest_secret;
 	public:
 		void	set_first_name(std::string& f_name);
@@ -29,6 +29,7 @@ class	Contacts
         void    set_nickname(std::string& n_name);
         void    set_phone_number(int& p_number);
         void    set_darkest_secret(std::string& d_secret);
+		int     get_phone_number(Contacts& contact);
 };
 
 #endif

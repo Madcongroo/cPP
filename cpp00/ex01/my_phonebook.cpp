@@ -3,28 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   my_phonebook.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:46:35 by proton            #+#    #+#             */
-/*   Updated: 2025/01/10 16:36:48 by bproton          ###   ########.fr       */
+/*   Updated: 2025/01/14 11:29:10 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_phonebook.hpp"
 
-int	is_empty(class::Contacts contact[])
+int	MyPhonebook::is_empty(Contacts& contact)
 {
-	
+	if (contact.)
 }
 
-void	MyPhonebook::fill_contacts()
+void	MyPhonebook::add_to_contacts(MyPhonebook& phonebook)
 {
-	int	count = 0;
+	int			count = 0;
+	int			ret = 0;
+	std::string	entries;
 
 	while (count < 8)
 	{
-		if (is_empty(Contacts contact[i]) == -1)
+		ret = phonebook.is_empty(phonebook.contact[count]);
+		if (ret == -1)
 			continue ;
+		else
+			break ;
 		count++;
+	}
+	while (1)
+	{
+
 	}
 }

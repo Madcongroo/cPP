@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   my_phonebook.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/01/10 16:37:19 by bproton          ###   ########.fr       */
+/*   Updated: 2025/01/14 11:04:42 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 class MyPhonebook
 {
 	private:
-		class::Contacts contact[8];
+		Contacts	contact[8];
 	public:
-		void	fill_contacts();
-		void	set_contacts(Contacts contact[]);
+		int		is_empty(Contacts& contact);
+		void	add_to_contacts(MyPhonebook& phonebook);
 };
 
 #endif
