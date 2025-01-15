@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/01/14 11:04:42 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/15 13:49:01 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@
 
 #include <iostream>
 #include <string>
+#include <limits>
 #include "contact.hpp"
 
-class MyPhonebook
+class MyPhoneBook
 {
 	private:
 		Contacts	contact[8];
 	public:
-		int		is_empty(Contacts& contact);
-		void	add_to_contacts(MyPhonebook& phonebook);
+		MyPhoneBook(){};
+		~MyPhoneBook(){};
+		void	create_phonebook(MyPhoneBook& phonebook);
+		void	search_contact(MyPhoneBook& phonebook);
 };
 
 #endif

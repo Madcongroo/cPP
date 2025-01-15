@@ -6,18 +6,24 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:46:35 by proton            #+#    #+#             */
-/*   Updated: 2025/01/14 11:29:10 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/15 13:24:41 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_phonebook.hpp"
 
-int	MyPhonebook::is_empty(Contacts& contact)
+void	MyPhoneBook::search_contact(MyPhoneBook& phonebook)
 {
-	if (contact.)
+	int	count = 0;
+
+	while (count < 8)
+	{
+		phonebook.contact->display_contact(phonebook.contact[count], count);
+		count++;
+	}
 }
 
-void	MyPhonebook::add_to_contacts(MyPhonebook& phonebook)
+void	MyPhoneBook::create_phonebook(MyPhoneBook& phonebook)
 {
 	int			count = 0;
 	int			ret = 0;
@@ -25,15 +31,14 @@ void	MyPhonebook::add_to_contacts(MyPhonebook& phonebook)
 
 	while (count < 8)
 	{
-		ret = phonebook.is_empty(phonebook.contact[count]);
-		if (ret == -1)
-			continue ;
-		else
+		ret = phonebook.contact[count].is_empty(phonebook.contact[count]);
+		if (ret == 0)
 			break ;
 		count++;
 	}
-	while (1)
+	if (count == 8) //means the new index should be the oldest created
 	{
 
 	}
+	phonebook.contact[count].set_contact(phonebook.contact[count]);
 }

@@ -6,14 +6,16 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:07:28 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/14 11:31:15 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/15 13:25:03 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-#include "my_phonebook.hpp"
+#include <iostream>
+#include <string>
+#include <cstdio>
 
 class	Contacts
 {
@@ -24,12 +26,11 @@ class	Contacts
 		std::string	phone_number;
 		std::string	darkest_secret;
 	public:
-		void	set_first_name(std::string& f_name);
-        void    set_last_name(std::string& l_name);
-        void    set_nickname(std::string& n_name);
-        void    set_phone_number(int& p_number);
-        void    set_darkest_secret(std::string& d_secret);
-		int     get_phone_number(Contacts& contact);
+		Contacts(){};
+		~Contacts(){};
+		void	set_contact(Contacts& contact);
+		int		is_empty(Contacts& contact);
+		void	display_contact(Contacts& contact, int index);
 };
 
 #endif
