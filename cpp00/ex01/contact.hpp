@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <cstdio>
+#include <iomanip>
 
 class	Contacts
 {
@@ -25,12 +26,13 @@ class	Contacts
 		std::string	nickname;
 		std::string	phone_number;
 		std::string	darkest_secret;
+		ctime		time;
 	public:
-		Contacts(){};
-		~Contacts(){};
-		void	set_contact(Contacts& contact);
+		Contacts(void);
+		~Contacts(void);
+		void	set_contact(double base_time);
 		int		is_empty(Contacts& contact);
-		void	display_contact();
+		void	display_contact(int index);
 };
 
 #endif

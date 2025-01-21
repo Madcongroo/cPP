@@ -25,7 +25,7 @@ int main(void)
 		std::cout << "enter ADD to add a contact, SEARCH to search for a contact, EXIT to quit the progamm" << std::endl << std::flush;
 		std::getline(std::cin, entry);
 		if (entry == "ADD")
-	        phonebook.create_phonebook(phonebook);
+	        phonebook.create_phonebook();
 		else if (entry == "SEARCH")
 			phonebook.search_contact(phonebook);
 		else if (entry == "EXIT")

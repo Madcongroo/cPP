@@ -12,16 +12,28 @@
 
 #include "my_phonebook.hpp"
 
-void	MyPhoneBook::search_contact(MyPhoneBook& phonebook)
+MyPhoneBook::MyPhoneBook()
 {
+	this->time = clock();
+}
+
+void	MyPhoneBook::search_contact()
+{
+	int	choice;
 	std::cout << "_____________________________________________" << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 	std::cout << "|__________|__________|__________|__________|" << std::endl << std::flush;
 
-	phonebook.contact->display_contact(phonebook.contact);
+	for (int i = 0; i < 8; i++)
+		this->contact[i].display_contact(i);
+	std::cout << "Choose an index!" << std::endl;
+	std::cin >> choice;
+	if (!isalnum(choice))
+		std::cout << "This aint no index, type again!" << std::endl;
+	
 }
 
-void	MyPhoneBook::create_phonebook(MyPhoneBook& phonebook)
+void	MyPhoneBook::create_phonebook()
 {
 	int			count = 0;
 	int			ret = 0;
@@ -29,14 +41,15 @@ void	MyPhoneBook::create_phonebook(MyPhoneBook& phonebook)
 
 	while (count < 8)
 	{
-		ret = phonebook.contact[count].is_empty(phonebook.contact[count]);
+		ret = this->contact[count].is_empty(this->contact[count]);
 		if (ret == 0)
 			break ;
+		time++;
 		count++;
 	}
 	if (count == 8) //means the new index should be the oldest created
 	{
 
 	}
-	phonebook.contact[count].set_contact(phonebook.contact[count]);
+	this->contact[count].set_contact(this->time);
 }

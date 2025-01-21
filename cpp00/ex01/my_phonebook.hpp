@@ -17,17 +17,19 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <ctime>
 #include "contact.hpp"
 
 class MyPhoneBook
 {
 	private:
 		Contacts	contact[8];
+		double		time;
 	public:
-		MyPhoneBook(){};
-		~MyPhoneBook(){};
-		void	create_phonebook(MyPhoneBook& phonebook);
-		void	search_contact(MyPhoneBook& phonebook);
+		MyPhoneBook(void);
+		~MyPhoneBook(void);
+		void	create_phonebook();
+		void	search_contact();
 };
 
 #endif
