@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:14:33 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/15 11:06:37 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/16 14:32:09 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int main(void)
 			phonebook.search_contact(phonebook);
 		else if (entry == "EXIT")
 			return (0);
+		else if (entry.empty())
+			return (1);
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 }

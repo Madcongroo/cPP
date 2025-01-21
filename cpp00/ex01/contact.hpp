@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:07:28 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/15 13:25:03 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/21 12:06:21 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class	Contacts
 		~Contacts(){};
 		void	set_contact(Contacts& contact);
 		int		is_empty(Contacts& contact);
-		void	display_contact(Contacts& contact, int index);
+		void	display_contact();
 };
 
 #endif
