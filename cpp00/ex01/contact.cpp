@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:07:35 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/21 21:20:12 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/22 10:40:11 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	Contacts::set_contact(double base_time)
 			if (turns == 0)
 				break ;
 		}
+		if (turns == 0)
+				break ;
 	}
 	this->phone_number = entry;
 	std::cout << "Enter the darkest secret" << std::endl << std::flush;

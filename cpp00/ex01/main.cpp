@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:14:33 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/21 21:10:47 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/22 10:44:19 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,16 @@ int main(void)
 		std::cout << "enter ADD to add a contact, SEARCH to search for a contact, EXIT to quit the progamm" << std::endl << std::flush;
 		std::getline(std::cin, entry);
 		if (entry == "ADD")
-	        phonebook.create_phonebook();
+		{
+			phonebook.create_phonebook();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
 		else if (entry == "SEARCH")
+		{
 			phonebook.search_contact();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
 		else if (entry == "EXIT")
 			return (0);
-		else if (entry.empty())
-			return (1);
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 }
