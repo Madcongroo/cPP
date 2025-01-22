@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:46:35 by proton            #+#    #+#             */
-/*   Updated: 2025/01/21 12:06:12 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/21 21:17:37 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 MyPhoneBook::MyPhoneBook()
 {
 	this->time = clock();
+}
+
+MyPhoneBook::~MyPhoneBook()
+{
+	return;
 }
 
 void	MyPhoneBook::search_contact()

@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:14:33 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/16 14:32:09 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/21 21:10:47 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(void)
 		if (entry == "ADD")
 	        phonebook.create_phonebook();
 		else if (entry == "SEARCH")
-			phonebook.search_contact(phonebook);
+			phonebook.search_contact();
 		else if (entry == "EXIT")
 			return (0);
 		else if (entry.empty())

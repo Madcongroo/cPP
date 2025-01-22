@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:07:28 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/21 12:06:21 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/21 16:02:31 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	Contacts
 		std::string	nickname;
 		std::string	phone_number;
 		std::string	darkest_secret;
-		ctime		time;
+		double		time;
 	public:
 		Contacts(void);
 		~Contacts(void);
