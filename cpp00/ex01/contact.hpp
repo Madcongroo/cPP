@@ -33,6 +33,7 @@ class	Contacts
 		void	set_contact(double base_time);
 		int		is_empty(Contacts& contact);
 		void	display_contact(int index);
+		void	display_one_contact();
 };
 
 #endif

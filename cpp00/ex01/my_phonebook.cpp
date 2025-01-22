@@ -24,18 +24,32 @@ MyPhoneBook::~MyPhoneBook()
 
 void	MyPhoneBook::search_contact()
 {
-	int	choice;
+	std::string	entry;
+	int			num = 0;
 	std::cout << "_____________________________________________" << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 	std::cout << "|__________|__________|__________|__________|" << std::endl << std::flush;
 
 	for (int i = 0; i < 8; i++)
 		this->contact[i].display_contact(i);
-	std::cout << "Choose an index!" << std::endl;
-	std::cin >> choice;
-	if (!isalnum(choice))
-		std::cout << "This aint no index, type again!" << std::endl;
-	
+	while (!num)
+	{
+		std::cout << "Choose an index!" << std::endl;
+		std::cin >> entry;
+		if (entry.size() > 1)
+		{
+			std::cout << "Index too big" << std::endl;
+			continue ;
+		}
+		num = std::isdigit(entry[0]);
+		if (num == 0)
+		{
+			std::cout << "This aint no index!" << std::endl;
+			continue ;
+		}
+		num = std::stoi(entry);
+	}
+	this->contact[num].display_one_contact();
 }
 
 void	MyPhoneBook::create_phonebook()
@@ -49,7 +63,6 @@ void	MyPhoneBook::create_phonebook()
 		ret = this->contact[count].is_empty(this->contact[count]);
 		if (ret == 0)
 			break ;
-		time++;
 		count++;
 	}
 	if (count == 8) //means the new index should be the oldest created

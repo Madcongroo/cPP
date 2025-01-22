@@ -22,6 +22,15 @@ Contacts::~Contacts()
 	return ;
 }
 
+void	Contacts::display_one_contact(void)
+{
+	std::cout << "first name :" + this->first_name << std::endl;
+	std::cout << "last name :" + this->last_name << std::endl;
+	std::cout << "nickname :" + this->nickname << std::endl;
+	std::cout << "phone number :" + this->phone_number << std::endl;
+	std::cout << "darkest secret :" + this->darkest_secret << std::endl;  
+}
+
 int	Contacts::is_empty(Contacts& contact)
 {
 	if (!contact.phone_number[0])
@@ -35,7 +44,7 @@ void	Contacts::set_contact(double base_time)
 	std::string entry;
 	int			turns;
 
-	turns = 1;
+	turns = 0;
 	std::cout << "Enter the first name" << std::endl << std::flush;
 	std::cin >> entry;
 	this->first_name = entry;
@@ -45,18 +54,16 @@ void	Contacts::set_contact(double base_time)
 	std::cout << "Enter the nickname" << std::endl << std::flush;
 	std::cin >> entry;
 	this->nickname = entry;
-	while (turns != 0)
+	while (!turns)
 	{
 		std::cout << "Enter the phone number" << std::endl << std::flush;
 		std::cin >> entry;
 		for (std::string::size_type i = 0; i < entry.size(); i++)
 		{
-			turns = std::isalnum(entry[i]);
+			turns = std::isdigit(entry[i]);
 			if (turns == 0)
 				break ;
 		}
-		if (turns == 0)
-				break ;
 	}
 	this->phone_number = entry;
 	std::cout << "Enter the darkest secret" << std::endl << std::flush;
@@ -67,11 +74,10 @@ void	Contacts::set_contact(double base_time)
 
 void	Contacts::display_contact(int index)
 {
-	if (this->first_name.length() > 10)
 	std::cout << "|" << std::setw(10) << index << "|"
 	<< std::setw(10) << this->first_name << "|"
 	<< std::setw(10) << this->last_name << "|"
 	<< std::setw(10) << this->nickname << "|"
 	<< std::endl << std::flush;
-	std::cout << "|__________|__________|__________|___________|" << std::endl;
+	std::cout << "|__________|__________|__________|__________|" << std::endl;
 }
