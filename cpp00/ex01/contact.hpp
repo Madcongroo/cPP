@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:07:28 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/21 16:02:31 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/22 20:30:55 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <cstdio>
 #include <iomanip>
 
@@ -31,9 +32,11 @@ class	Contacts
 		Contacts(void);
 		~Contacts(void);
 		void	set_contact(double base_time);
-		int		is_empty(Contacts& contact);
+		int		is_empty();
 		void	display_contact(int index);
 		void	display_one_contact();
+		void	set_oldest_contact(double base_time);
+		double	which_oldest();
 };
 
 #endif
