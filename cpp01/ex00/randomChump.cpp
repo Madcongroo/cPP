@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_phonebook.hpp                                   :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/01/24 15:28:32 by bproton          ###   ########.fr       */
+/*   Created: 2025/01/24 14:45:46 by bproton           #+#    #+#             */
+/*   Updated: 2025/01/24 15:46:55 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
 
-#ifndef MY_PHONEBOOK_HPP
-#define MY_PHONEBOOK_HPP
-
-#include <iostream>
-#include <string>
-#include <limits>
-#include <ctime>
-#include "contact.hpp"
-
-class MyPhoneBook
+void	randomChump( std::string name )
 {
-	private:
-		Contacts	contact[8];
-		double		time;
-	public:
-		MyPhoneBook( void );
-		~MyPhoneBook( void );
-		void	create_phonebook();
-		void	search_contact();
-};
-
-#endif
+    
+}

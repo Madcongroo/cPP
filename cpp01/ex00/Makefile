@@ -5,28 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bproton <bproton@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/24 15:35:51 by bproton           #+#    #+#              #
-#    Updated: 2025/01/24 15:35:53 by bproton          ###   ########.fr        #
+#    Created: 2025/01/24 14:45:34 by bproton           #+#    #+#              #
+#    Updated: 2025/01/24 15:40:03 by bproton          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	megaphone
-CC			=	c++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
-SRC		 	=	megaphone.cpp
-
-OBJ			=	$(SRC:.cpp=.o)
+NAME	=	Brainz
+CC		=	c++
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+SRC		=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+OBJS	=	$(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -rf $(NAME)

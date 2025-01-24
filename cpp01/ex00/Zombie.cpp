@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_phonebook.hpp                                   :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/01/24 15:28:32 by bproton          ###   ########.fr       */
+/*   Created: 2025/01/24 14:45:49 by bproton           #+#    #+#             */
+/*   Updated: 2025/01/24 16:01:30 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
 
-#ifndef MY_PHONEBOOK_HPP
-#define MY_PHONEBOOK_HPP
 
-#include <iostream>
-#include <string>
-#include <limits>
-#include <ctime>
-#include "contact.hpp"
-
-class MyPhoneBook
+Zombie::Zombie()
 {
-	private:
-		Contacts	contact[8];
-		double		time;
-	public:
-		MyPhoneBook( void );
-		~MyPhoneBook( void );
-		void	create_phonebook();
-		void	search_contact();
-};
 
-#endif
+}
+
+Zombie::~Zombie( void )
+{
+    std::cout << this->name << "is dead!" << std::endl;
+    return ;
+}
+
+void    Zombie::announce()
+{
+    
+}

@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: proton <proton@student.42.fr>              +#+  +:+       +#+         #
+#    By: bproton <bproton@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 14:41:45 by proton            #+#    #+#              #
-#    Updated: 2025/01/23 14:44:52 by proton           ###   ########.fr        #
+#    Updated: 2025/01/24 15:35:24 by bproton          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	account
-CC		=	g++
+CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRC		=	Account.cpp tests.cpp
 OBJS	=	$(SRC:.cpp=.o)
