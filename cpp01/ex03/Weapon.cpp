@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:43 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/29 15:54:11 by bproton          ###   ########.fr       */
+/*   Updated: 2025/01/30 10:35:44 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Weapon::Weapon( std::string type )
 
 Weapon::~Weapon( void )
 {
-	std::cout << "class is being destroyed" << std::endl;
+	std::cout << this->_type << " class is being destroyed" << std::endl;
 	return ;
 }
 
@@ -37,7 +37,9 @@ const std::string& Weapon::getType( void ) const
 
 void	Weapon::setType( std::string new_type)
 {
+	std::cout << this->_type << " : just before cleaning" << std::endl;
 	this->_type.clear();
 	this->_type = new_type;
+	std::cout << this->_type << std::endl;
 	return ;
 }

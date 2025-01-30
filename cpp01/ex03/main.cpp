@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:40 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/29 15:43:24 by bproton          ###   ########.fr       */
+/*   Updated: 2025/01/30 10:30:41 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
-#include "HumanB.hpp"
+// #include "HumanB.hpp"
 
 int main()
 {
