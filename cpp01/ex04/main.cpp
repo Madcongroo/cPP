@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:26:15 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/04 16:05:22 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/04 17:49:02 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,15 @@ void	handle_line(std::string line, std::ofstream &out_f, const std::string s1, c
 {
 	int	i = 0;
 	int	i_start = 0;
-	int	old_i_start = 0;
-	int	s2_len = s2.length();
 	
 	while (line[i])
 	{
-		i_start = line.find(s1, i);
-		if (old_i_start != i_start)
-		{
-			line.erase(i_start, s1.length());
-			line.insert(i_start, s2);
-			i += i_start + s2_len;
-			std::cout << "is in the loop" << std::endl;
-		}
-		else
-			i++;
-		old_i_start = i_start;
+		i_start = line.find(s1, i_start);
+		if ((line.find(s1, i_start)) == std::string::npos)
+			break ;
+		line.erase(i_start, s1.length());
+		line.insert(i_start, s2);
+		i += (i_start + s2.length());
 	}
 	out_f << line << std::endl;
 }
@@ -45,10 +38,7 @@ void	transfer_to_file(std::ofstream &out_f, std::ifstream &f, const std::string 
 	{
 		i_start = line.find(s1);
 		if (line[i_start] == '\0')
-		{
-			std::cout << "is here" << std::endl;
 			out_f << line << std::endl;
-		}
 		else
 			handle_line(line, out_f, s1, s2);
 		line.clear();
@@ -70,8 +60,8 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	
-	std::ofstream out_f("result.txt");
-	if (out_f.fail())
+	std::ofstream out_f("result.txt", std::ios::trunc);
+	if (!out_f)
 	{
 		std::cerr << "Error creating the file" << std::endl;
 		return (1);
