@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 16:51:48 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/30 18:28:01 by proton           ###   ########.fr       */
+/*   Created: 2025/01/28 12:49:56 by proton            #+#    #+#             */
+/*   Updated: 2025/01/29 10:50:45 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdio>
-#include <cstdlib>
-#include <fstream>
-#include <string.h>
-
-
-
-#endif
+Zombie*	zombieHorde( int N, std::string name )
+{
+	Zombie* ZHorde = new Zombie[N];
+	if (!ZHorde)
+		return (NULL);
+	for (int i = 0; i < N; i++)
+	{
+		char c = i + '0';
+		ZHorde[i] = Zombie(name + c);
+	}
+	return (ZHorde);
+}

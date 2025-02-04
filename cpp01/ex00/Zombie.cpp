@@ -3,28 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 14:45:49 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/24 16:01:30 by bproton          ###   ########.fr       */
+/*   Updated: 2025/01/28 12:14:10 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 
-Zombie::Zombie()
+Zombie::Zombie( std::string name )
 {
-
+    this->_name = name;
+    std::cout << name << ": is being created!" << std::endl;
+    return ;
 }
 
 Zombie::~Zombie( void )
 {
-    std::cout << this->name << "is dead!" << std::endl;
+    std::cout << this->_name << " is dead!" << std::endl;
     return ;
 }
 
 void    Zombie::announce()
 {
-    
+    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    return ;
 }

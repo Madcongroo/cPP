@@ -6,16 +6,14 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:29 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/30 10:55:40 by proton           ###   ########.fr       */
+/*   Updated: 2025/01/30 18:11:04 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA( std::string name, Weapon& Weapon )
+HumanA::HumanA( std::string name, Weapon& Weapon ) : _Weapon(Weapon), _name(name)
 {
-	this->_name = name;
-	this->_Weapon = Weapon;
 	return ;
 }
 
