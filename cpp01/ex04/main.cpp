@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:26:15 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/04 17:49:02 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/05 11:58:08 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	transfer_to_file(std::ofstream &out_f, std::ifstream &f, const std::string 
 
 	while (std::getline(f, line))
 	{
-		i_start = line.find(s1);
-		if (line[i_start] == '\0')
+		i_start = line.find(s1, i_start);
+		if ((line.find(s1, i_start)) == std::string::npos)
 			out_f << line << std::endl;
 		else
 			handle_line(line, out_f, s1, s2);
