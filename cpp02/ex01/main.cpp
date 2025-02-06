@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:33:08 by proton            #+#    #+#             */
-/*   Updated: 2025/02/05 22:27:48 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/06 14:37:36 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	main( void )
 {
 	Fixed 		a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
+	Fixed b( 10 );
+	Fixed c( 42.42f );
+	Fixed d( b );
 
 	a = Fixed( 1234.4321f );
 
