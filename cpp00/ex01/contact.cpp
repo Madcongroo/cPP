@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:07:35 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/23 10:40:22 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/11 14:00:35 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,11 @@ void	Contacts::set_oldest_contact(double base_time)
 	std::cin >> entry;
 	this->darkest_secret = entry;
 	this->time = clock() - base_time;
+	if (std::cin.eof())
+	{
+		std::cerr << "an error has occured" << std::endl;
+		exit (1);
+	}
 }
 
 void	Contacts::set_contact(double base_time)
@@ -113,6 +118,11 @@ void	Contacts::set_contact(double base_time)
 	std::cin >> entry;
 	this->darkest_secret = entry;
 	this->time = clock() - base_time;
+	if (std::cin.eof())
+	{
+		std::cerr << "an error has occured" << std::endl;
+		exit (1);
+	}
 }
 
 void	new_strings(std::string& new_str, std::string& old_str)

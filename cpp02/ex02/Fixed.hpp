@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:33:05 by proton            #+#    #+#             */
-/*   Updated: 2025/02/11 11:38:49 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/11 16:00:14 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,14 @@ class Fixed
 		~Fixed();
 
 
-		float	toFloat( void ) const;
-		int		toInt( void ) const;
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw );
+		float			toFloat( void ) const;
+		int				toInt( void ) const;
+		int				getRawBits( void ) const;
+		void			setRawBits( int const raw );
+		static int&		min(Fixed& a, Fixed& b);
+		static int&		min(const Fixed& a, const Fixed& b);
+		static int&		max(Fixed& a, Fixed& b);
+		static int&		max(const Fixed& a, const Fixed& b);
 
 		friend	std::ostream& operator<<(std::ostream& os, Fixed& name);
 		Fixed operator+(const Fixed& copy) const;
@@ -44,14 +48,10 @@ class Fixed
 		bool operator<=(const Fixed& copy) const;
 		bool operator==(const Fixed& copy) const;
 		bool operator!=(const Fixed& copy) const;
-		Fixed operator++() const;
-		Fixed operator--() const;
-
-		static float&	min(float& nbr1, float& nbr2);
-		static float&	min(const float& nbr1, const float& nbr2);
-		static float&	max(float& nbr1, float& nbr2);
-		static float&	max(const float& nbr1, const float& nbr2);
-		
+		Fixed& operator++();
+		Fixed& operator--();
+		Fixed& operator++(int);
+		Fixed& operator--(int);
 
 	private:
 		int					_fixed_point;

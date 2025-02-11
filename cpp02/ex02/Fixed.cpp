@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:33:02 by proton            #+#    #+#             */
-/*   Updated: 2025/02/06 17:31:36 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/11 15:59:44 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ const int Fixed::_binary_point = 8;
 
 std::ostream& operator<<(std::ostream& os, Fixed& name)
 {
-	os << ((float)name._fixed_point / 256.0);
+	os << ((float)name->_fixed_point / 256.0);
 	return (os);
 }
 
@@ -65,7 +65,135 @@ Fixed::~Fixed()
 	return ;
 }
 
+Fixed	Fixed::operator+(const Fixed& copy) const
+{
+	Fixed	temp;
+	
+	temp._fixed_point = this->_fixed_point + copy._fixed_point;
+	return (temp);
+}
 
+Fixed	Fixed::operator-(const Fixed& copy) const
+{
+	Fixed	temp;
+	
+	temp._fixed_point = this->_fixed_point - copy._fixed_point;
+	return (temp);
+}
+
+Fixed	Fixed::operator*(const Fixed& copy) const
+{
+	Fixed	temp;
+	
+	temp._fixed_point = this->_fixed_point * copy._fixed_point;
+	return (temp);
+}
+
+Fixed	Fixed::operator/(const Fixed& copy) const
+{
+	Fixed	temp;
+	
+	temp._fixed_point = this->_fixed_point / copy._fixed_point;
+	return (temp);
+}
+
+bool Fixed::operator>(const Fixed& copy) const
+{
+	if (this->_fixed_point > copy._fixed_point)
+		return (1);
+	else
+		return (0);
+}
+
+bool Fixed::operator<(const Fixed& copy) const
+{
+	if (this->_fixed_point < copy._fixed_point)
+		return (1);
+	else
+		return (0);
+}
+
+bool Fixed::operator>=(const Fixed& copy) const
+{
+	if (this->_fixed_point >= copy._fixed_point)
+		return (1);
+	else
+		return (0);
+}
+
+bool Fixed::operator<=(const Fixed& copy) const
+{
+	if (this->_fixed_point <= copy._fixed_point)
+		return (1);
+	else
+		return (0);
+}
+
+bool Fixed::operator==(const Fixed& copy) const
+{
+	if (this->_fixed_point == copy._fixed_point)
+		return (1);
+	else
+		return (0);
+}
+
+bool Fixed::operator!=(const Fixed& copy) const
+{
+	if (this->_fixed_point != copy._fixed_point)
+		return (1);
+	else
+		return (0);
+}
+
+Fixed& Fixed::operator++()
+{
+	this->_fixed_point++;
+	return (*this);
+}
+
+Fixed& Fixed::operator--()
+{
+	this->_fixed_point--;
+	return (*this);
+}
+
+Fixed& Fixed::operator++(int)
+{
+	Fixed	temp = *this;
+
+	this->_fixed_point++;
+	return (temp);
+}
+
+Fixed& Fixed::operator--(int)
+{
+	Fixed	temp = *this;
+
+	this->_fixed_point--;
+	return (temp);
+}
+
+		
+
+int&	Fixed::min(Fixed& a, Fixed& b)
+{
+	
+}
+
+int&	Fixed::min(const Fixed& a, const Fixed& b)
+{
+	
+}
+
+int&	Fixed::max(Fixed& a, Fixed& b)
+{
+	
+}
+
+int&	Fixed::max(const Fixed& a, const Fixed& b)
+{
+	
+}
 
 int		Fixed::getRawBits( void ) const
 {
