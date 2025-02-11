@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:33:02 by proton            #+#    #+#             */
-/*   Updated: 2025/02/11 15:59:44 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/11 22:46:51 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 const int Fixed::_binary_point = 8;
 
-std::ostream& operator<<(std::ostream& os, Fixed& name)
+std::ostream& operator<<(std::ostream& os, const Fixed& name)
 {
-	os << ((float)name->_fixed_point / 256.0);
+	os << name.toFloat();
 	return (os);
 }
 
@@ -27,10 +27,10 @@ Fixed::Fixed() : _fixed_point(0)
 	return ;
 }
 
-Fixed::Fixed( const Fixed& copy) : _fixed_point(copy._fixed_point)
+Fixed::Fixed( const Fixed& copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
-
+	*this = copy;
 	return ;
 }
 
@@ -55,7 +55,7 @@ Fixed::Fixed( const float nbr )
 {
 	std::cout << "Float constructor called" << std::endl;
 
-	this->_fixed_point = (nbr * 256);
+	this->_fixed_point = roundf(nbr * (1 << _binary_point));
 }
 
 Fixed::~Fixed()
@@ -67,39 +67,39 @@ Fixed::~Fixed()
 
 Fixed	Fixed::operator+(const Fixed& copy) const
 {
-	Fixed	temp;
-	
-	temp._fixed_point = this->_fixed_point + copy._fixed_point;
-	return (temp);
+	Fixed	tmp;
+
+	tmp._fixed_point = this->_fixed_point + copy._fixed_point;
+	return (tmp);
 }
 
 Fixed	Fixed::operator-(const Fixed& copy) const
 {
-	Fixed	temp;
-	
-	temp._fixed_point = this->_fixed_point - copy._fixed_point;
-	return (temp);
+	Fixed	tmp;
+
+	tmp._fixed_point = this->_fixed_point - copy._fixed_point;
+	return (tmp);
 }
 
 Fixed	Fixed::operator*(const Fixed& copy) const
 {
-	Fixed	temp;
-	
-	temp._fixed_point = this->_fixed_point * copy._fixed_point;
-	return (temp);
+	Fixed	tmp;
+
+	tmp._fixed_point = (this->_fixed_point * copy._fixed_point) >> _binary_point;
+	return (tmp);
 }
 
 Fixed	Fixed::operator/(const Fixed& copy) const
 {
-	Fixed	temp;
-	
-	temp._fixed_point = this->_fixed_point / copy._fixed_point;
-	return (temp);
+	Fixed	tmp;
+
+	tmp._fixed_point = (this->_fixed_point << _binary_point) / copy._fixed_point;
+	return (tmp);
 }
 
 bool Fixed::operator>(const Fixed& copy) const
 {
-	if (this->_fixed_point > copy._fixed_point)
+	if (this->toFloat() > copy.toFloat())
 		return (1);
 	else
 		return (0);
@@ -107,7 +107,7 @@ bool Fixed::operator>(const Fixed& copy) const
 
 bool Fixed::operator<(const Fixed& copy) const
 {
-	if (this->_fixed_point < copy._fixed_point)
+	if (this->toFloat() < copy.toFloat())
 		return (1);
 	else
 		return (0);
@@ -115,7 +115,7 @@ bool Fixed::operator<(const Fixed& copy) const
 
 bool Fixed::operator>=(const Fixed& copy) const
 {
-	if (this->_fixed_point >= copy._fixed_point)
+	if (this->toFloat() >= copy.toFloat())
 		return (1);
 	else
 		return (0);
@@ -123,7 +123,7 @@ bool Fixed::operator>=(const Fixed& copy) const
 
 bool Fixed::operator<=(const Fixed& copy) const
 {
-	if (this->_fixed_point <= copy._fixed_point)
+	if (this->toFloat() <= copy.toFloat())
 		return (1);
 	else
 		return (0);
@@ -131,7 +131,7 @@ bool Fixed::operator<=(const Fixed& copy) const
 
 bool Fixed::operator==(const Fixed& copy) const
 {
-	if (this->_fixed_point == copy._fixed_point)
+	if (this->toFloat() == copy.toFloat())
 		return (1);
 	else
 		return (0);
@@ -139,7 +139,7 @@ bool Fixed::operator==(const Fixed& copy) const
 
 bool Fixed::operator!=(const Fixed& copy) const
 {
-	if (this->_fixed_point != copy._fixed_point)
+	if (this->toFloat() != copy.toFloat())
 		return (1);
 	else
 		return (0);
@@ -157,7 +157,7 @@ Fixed& Fixed::operator--()
 	return (*this);
 }
 
-Fixed& Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
 	Fixed	temp = *this;
 
@@ -165,7 +165,7 @@ Fixed& Fixed::operator++(int)
 	return (temp);
 }
 
-Fixed& Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
 	Fixed	temp = *this;
 
@@ -175,24 +175,36 @@ Fixed& Fixed::operator--(int)
 
 		
 
-int&	Fixed::min(Fixed& a, Fixed& b)
+Fixed&	Fixed::min(Fixed& a, Fixed& b)
 {
-	
+	if (a.toFloat() <= b.toFloat())
+		return (a);
+	else
+		return (b);
 }
 
-int&	Fixed::min(const Fixed& a, const Fixed& b)
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
 {
-	
+	if (a.toFloat() <= b.toFloat())
+		return (a);
+	else
+		return (b);
 }
 
-int&	Fixed::max(Fixed& a, Fixed& b)
+Fixed&	Fixed::max(Fixed& a, Fixed& b)
 {
-	
+	if (a.toFloat() >= b.toFloat())
+		return (a);
+	else
+		return (b);
 }
 
-int&	Fixed::max(const Fixed& a, const Fixed& b)
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
 {
-	
+	if (a.toFloat() >= b.toFloat())
+		return (a);
+	else
+		return (b);
 }
 
 int		Fixed::getRawBits( void ) const
@@ -211,7 +223,7 @@ float	Fixed::toFloat( void ) const
 {
 	float new_nbr;
 
-	new_nbr = this->_fixed_point >> _binary_point;
+	new_nbr = (float)this->_fixed_point / (float)(1 << _binary_point);
 	return (new_nbr);
 }
 

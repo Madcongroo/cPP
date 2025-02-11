@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:33:05 by proton            #+#    #+#             */
-/*   Updated: 2025/02/06 14:36:22 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/11 17:09:18 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ class Fixed
 		int		toInt( void ) const;
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
-		friend	std::ostream& operator<<(std::ostream& os, Fixed& name);
 
 	private:
 		int					_fixed_point;
 		static const int	_binary_point;
 };
+std::ostream& operator<<(std::ostream& os, const Fixed& name);
 
 
 

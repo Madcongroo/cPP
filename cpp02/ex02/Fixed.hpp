@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:33:05 by proton            #+#    #+#             */
-/*   Updated: 2025/02/11 16:00:14 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/11 22:26:06 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,15 @@ class Fixed
 		~Fixed();
 
 
-		float			toFloat( void ) const;
-		int				toInt( void ) const;
-		int				getRawBits( void ) const;
-		void			setRawBits( int const raw );
-		static int&		min(Fixed& a, Fixed& b);
-		static int&		min(const Fixed& a, const Fixed& b);
-		static int&		max(Fixed& a, Fixed& b);
-		static int&		max(const Fixed& a, const Fixed& b);
+		float				toFloat( void ) const;
+		int					toInt( void ) const;
+		int					getRawBits( void ) const;
+		void				setRawBits( int const raw );
+		static Fixed&			min(Fixed& a, Fixed& b);
+		static const Fixed&	min(const Fixed& a, const Fixed& b);
+		static Fixed&			max(Fixed& a, Fixed& b);
+		static const Fixed&	max(const Fixed& a, const Fixed& b);
 
-		friend	std::ostream& operator<<(std::ostream& os, Fixed& name);
 		Fixed operator+(const Fixed& copy) const;
 		Fixed operator-(const Fixed& copy) const;
 		Fixed operator*(const Fixed& copy) const;
@@ -50,14 +49,13 @@ class Fixed
 		bool operator!=(const Fixed& copy) const;
 		Fixed& operator++();
 		Fixed& operator--();
-		Fixed& operator++(int);
-		Fixed& operator--(int);
+		Fixed operator++(int);
+		Fixed operator--(int);
 
 	private:
 		int					_fixed_point;
 		static const int	_binary_point;
 };
-
-
+std::ostream& operator<<(std::ostream& os, const Fixed& name);
 
 #endif

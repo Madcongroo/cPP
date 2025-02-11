@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:33:02 by proton            #+#    #+#             */
-/*   Updated: 2025/02/06 15:59:31 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/11 21:31:44 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 const int Fixed::_binary_point = 8;
 
-std::ostream& operator<<(std::ostream& os, Fixed& name)
+std::ostream& operator<<(std::ostream& os, const Fixed& name)
 {
-	os << ((float)name._fixed_point / 256.0);
+	os << ((float)name.toFloat());
 	return (os);
 }
 
@@ -27,10 +27,10 @@ Fixed::Fixed() : _fixed_point(0)
 	return ;
 }
 
-Fixed::Fixed( const Fixed& copy) : _fixed_point(copy._fixed_point)
+Fixed::Fixed( const Fixed& copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
-
+	*this = copy;
 	return ;
 }
 
@@ -39,7 +39,7 @@ Fixed& Fixed::operator=(const Fixed& copy)
 	std::cout << "copy assignement operator called" << std::endl;
 
 	if (this != &copy)
-		this->_fixed_point = copy._fixed_point;
+		this->_fixed_point = copy.getRawBits();
 
 	return (*this);
 }
@@ -55,7 +55,7 @@ Fixed::Fixed( const float nbr )
 {
 	std::cout << "Float constructor called" << std::endl;
 
-	this->_fixed_point = (nbr * 256);
+	this->_fixed_point = roundf(nbr * (1 << _binary_point));
 }
 
 Fixed::~Fixed()
@@ -84,7 +84,7 @@ float	Fixed::toFloat( void ) const
 {
 	float new_nbr;
 
-	new_nbr = this->_fixed_point >> _binary_point;
+	new_nbr = (float)this->_fixed_point / (float)(1 << _binary_point);
 	return (new_nbr);
 }
 
