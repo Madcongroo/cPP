@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:07:35 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/11 14:00:35 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/12 10:53:37 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ double	Contacts::which_oldest()
 	return (this->time);
 }
 
-void	Contacts::set_oldest_contact(double base_time)
+void Contacts::set_oldest_contact(double base_time)
 {
 	std::string entry;
-	int			turns;
+	int         turns;
 
 	turns = 0;
 	this->first_name.clear();
@@ -55,74 +55,118 @@ void	Contacts::set_oldest_contact(double base_time)
 	this->nickname.clear();
 	this->phone_number.clear();
 	this->darkest_secret.clear();
+
 	std::cout << "Enter the first name" << std::endl << std::flush;
-	std::cin >> entry;
+	if (!(std::cin >> entry))
+	{
+		std::cerr << "An error has occurred" << std::endl;
+		exit(1);
+	}
 	this->first_name = entry;
+
 	std::cout << "Enter the last name" << std::endl << std::flush;
-	std::cin >> entry;
+	if (!(std::cin >> entry))
+	{
+		std::cerr << "An error has occurred" << std::endl;
+		exit(1);
+	}
 	this->last_name = entry;
+
 	std::cout << "Enter the nickname" << std::endl << std::flush;
-	std::cin >> entry;
+	if (!(std::cin >> entry))
+	{
+		std::cerr << "An error has occurred" << std::endl;
+		exit(1);
+	}
 	this->nickname = entry;
+
 	while (!turns)
 	{
 		std::cout << "Enter the phone number" << std::endl << std::flush;
-		std::cin >> entry;
+		if (!(std::cin >> entry))
+		{
+			std::cerr << "An error has occurred" << std::endl;
+			exit(1);
+		}
+
 		for (std::string::size_type i = 0; i < entry.size(); i++)
 		{
 			turns = std::isdigit(entry[i]);
 			if (turns == 0)
-				break ;
+				break;
 		}
 	}
 	this->phone_number = entry;
+
 	std::cout << "Enter the darkest secret" << std::endl << std::flush;
-	std::cin >> entry;
-	this->darkest_secret = entry;
-	this->time = clock() - base_time;
-	if (std::cin.eof())
+	if (!(std::cin >> entry))
 	{
-		std::cerr << "an error has occured" << std::endl;
-		exit (1);
+		std::cerr << "An error has occurred" << std::endl;
+		exit(1);
 	}
+	this->darkest_secret = entry;
+
+	this->time = clock() - base_time;
 }
+
 
 void	Contacts::set_contact(double base_time)
 {
 	std::string entry;
-	int			turns;
+	int         turns;
 
 	turns = 0;
 	std::cout << "Enter the first name" << std::endl << std::flush;
-	std::cin >> entry;
+	if (!(std::cin >> entry))
+	{
+		std::cerr << "An error has occurred" << std::endl;
+		exit(1);
+	}
 	this->first_name = entry;
+
 	std::cout << "Enter the last name" << std::endl << std::flush;
-	std::cin >> entry;
+	if (!(std::cin >> entry))
+	{
+		std::cerr << "An error has occurred" << std::endl;
+		exit(1);
+	}
 	this->last_name = entry;
+
 	std::cout << "Enter the nickname" << std::endl << std::flush;
-	std::cin >> entry;
+	if (!(std::cin >> entry))
+	{
+		std::cerr << "An error has occurred" << std::endl;
+		exit(1);
+	}
 	this->nickname = entry;
+
 	while (!turns)
 	{
 		std::cout << "Enter the phone number" << std::endl << std::flush;
-		std::cin >> entry;
+		if (!(std::cin >> entry))
+		{
+			std::cerr << "An error has occurred" << std::endl;
+			exit(1);
+		}
+
 		for (std::string::size_type i = 0; i < entry.size(); i++)
 		{
 			turns = std::isdigit(entry[i]);
 			if (turns == 0)
-				break ;
+				break;
 		}
 	}
 	this->phone_number = entry;
+
 	std::cout << "Enter the darkest secret" << std::endl << std::flush;
-	std::cin >> entry;
-	this->darkest_secret = entry;
-	this->time = clock() - base_time;
-	if (std::cin.eof())
+	if (!(std::cin >> entry))
 	{
-		std::cerr << "an error has occured" << std::endl;
-		exit (1);
+		std::cerr << "An error has occurred" << std::endl;
+		exit(1);
 	}
+	this->darkest_secret = entry;
+
+	this->time = clock() - base_time;
 }
 
 void	new_strings(std::string& new_str, std::string& old_str)

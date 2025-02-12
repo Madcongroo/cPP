@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_phonebook.hpp                                   :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/02/12 10:40:31 by proton           ###   ########.fr       */
+/*   Created: 2025/02/12 10:59:03 by proton            #+#    #+#             */
+/*   Updated: 2025/02/12 11:24:59 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef MY_PHONEBOOK_HPP
-#define MY_PHONEBOOK_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 #include <string>
-#include <limits>
-#include <ctime>
-#include <cstdlib>
-#include "contact.hpp"
 
-class MyPhoneBook
+class   ClapTrap
 {
 	private:
-		Contacts	contact[8];
-		double		time;
+
+		std::string	_name;
+		int			_Hit_points;
+		int			_Energy_points;
+		int			_Attack_damage;
+
 	public:
-		MyPhoneBook( void );
-		~MyPhoneBook( void );
-		void	create_phonebook();
-		void	search_contact();
+
+		ClapTrap( std::string name );
+		ClapTrap( const ClapTrap& copy );
+		ClapTrap& operator=( const ClapTrap& copy );
+		~ClapTrap();
+
+		void	attack( const std::string& target );
+		void	takeDamage( unsigned int amount );
+		void	beRepaired( unsigned int amount );
+
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   my_phonebook.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:46:35 by proton            #+#    #+#             */
-/*   Updated: 2025/02/11 14:00:22 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/12 10:55:37 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ void	MyPhoneBook::search_contact()
 	{
 		std::cout << "Choose an index!" << std::endl;
 		std::cin >> entry;
+		if (!(std::cin >> entry))
+		{
+			std::cerr << "An error has occurred" << std::endl;
+			exit(1);
+		}
 		if (entry.size() > 1)
 		{
 			std::cout << "Index too big" << std::endl;
@@ -46,11 +51,6 @@ void	MyPhoneBook::search_contact()
 		{
 			std::cout << "This aint no index!" << std::endl;
 			continue ;
-		}
-		if (std::cin.eof())
-		{
-			std::cerr << "an error has occured" << std::endl;
-			exit (1);
 		}
 	}
 	num = (entry[0] - 48); // to tranform the string into a number
