@@ -6,11 +6,11 @@
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:14:33 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/11 13:56:21 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/12 14:26:37 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_phonebook.hpp"
+#include "My_PhoneBook.hpp"
 
 /* numeric_limits<streamsize>::max , \n : looks to remove the \n in the stream buffer
 	limits<streamsize> is to say in the max buffer length */
@@ -40,6 +40,5 @@ int main(void)
 		}
 		else if (entry == "EXIT")
 			return (0);
-		std::cin.eof();
 	}
 }

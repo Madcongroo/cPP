@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_phonebook.hpp                                   :+:      :+:    :+:   */
+/*   My_PhoneBook.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/02/12 10:40:31 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/12 13:27:31 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <limits>
 #include <ctime>
 #include <cstdlib>
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class MyPhoneBook
 {

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_phonebook.cpp                                   :+:      :+:    :+:   */
+/*   My_PhoneBook.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:46:35 by proton            #+#    #+#             */
-/*   Updated: 2025/02/12 10:55:37 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/12 14:25:30 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_phonebook.hpp"
+#include "My_PhoneBook.hpp"
 
 MyPhoneBook::MyPhoneBook()
 {
@@ -34,26 +34,22 @@ void	MyPhoneBook::search_contact()
 		this->contact[i].display_contact(i);
 	while (!num)
 	{
-		std::cout << "Choose an index!" << std::endl;
+		std::cout << "Choose an index between 0 - 7!" << std::endl;
 		std::cin >> entry;
-		if (!(std::cin >> entry))
+		if (std::cin.eof())
 		{
 			std::cerr << "An error has occurred" << std::endl;
-			exit(1);
+			exit (1);
 		}
-		if (entry.size() > 1)
-		{
-			std::cout << "Index too big" << std::endl;
-			continue ;
-		}
-		num = std::isdigit(entry[0]);
-		if (num == 0)
+		if (entry.size() > 1 || !std::isdigit(entry[0]) || entry[0] < '0' || entry[0] > '7')
 		{
 			std::cout << "This aint no index!" << std::endl;
 			continue ;
 		}
+		else
+			break ;
 	}
-	num = (entry[0] - 48); // to tranform the string into a number
+	num = (entry[0] - '0');
 	this->contact[num].display_one_contact();
 }
 

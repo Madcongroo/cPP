@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:59:03 by proton            #+#    #+#             */
-/*   Updated: 2025/02/12 11:24:59 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/12 15:18:05 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class   ClapTrap
 
 	public:
 
+		ClapTrap();
 		ClapTrap( std::string name );
 		ClapTrap( const ClapTrap& copy );
 		ClapTrap& operator=( const ClapTrap& copy );
@@ -35,6 +36,11 @@ class   ClapTrap
 		void	attack( const std::string& target );
 		void	takeDamage( unsigned int amount );
 		void	beRepaired( unsigned int amount );
+		
+		std::string	getName( void ) const;
+		int			getHitPoints( void ) const;
+		int			getEnergyPoints( void ) const;
+		int			getAttackDamage( void ) const;
 
 };
 

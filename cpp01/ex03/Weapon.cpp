@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:43 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/30 10:35:44 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/12 14:16:47 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ Weapon::Weapon()
 	return ;
 }
 
-Weapon::Weapon( std::string type )
+Weapon::Weapon( std::string type ) : _type(type)
 {
-	this->_type = type;
 	return ;
 }
 
