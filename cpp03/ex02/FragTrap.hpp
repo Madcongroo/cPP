@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 10:59:08 by proton            #+#    #+#             */
-/*   Updated: 2025/02/13 14:22:21 by bproton          ###   ########.fr       */
+/*   Created: 2025/02/13 14:25:28 by bproton           #+#    #+#             */
+/*   Updated: 2025/02/13 15:10:28 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
 #include "ScavTrap.hpp"
 
-int	main( void )
+class   FragTrap : public ClapTrap
 {
-	ClapTrap clap1("base1");
-	ClapTrap clap2("base2");
-	ScavTrap scav1("derived1");
-	ScavTrap scav2(scav1);
-	
-	clap1.attack(clap2.getName());
-    if (clap1.getEnergyPoints() > 0)
-    {
-        clap2.takeDamage(clap1.getAttackDamage());
-    }
-	scav2.guardGate();
-	clap2.beRepaired(1);
-    
-	return (0);
-}
+	public:
+		
+		FragTrap();
+		FragTrap( std::string name );
+		FragTrap( const FragTrap& copy );
+		FragTrap operator=( const FragTrap& copy );
+		~FragTrap();
+		
+		void	highFivesGuys( void );
+};
+
+#endif
