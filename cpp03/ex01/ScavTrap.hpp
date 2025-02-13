@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 10:59:08 by proton            #+#    #+#             */
-/*   Updated: 2025/02/12 17:00:11 by proton           ###   ########.fr       */
+/*   Created: 2025/02/12 17:04:12 by proton            #+#    #+#             */
+/*   Updated: 2025/02/13 12:32:30 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int	main( void )
+class   ScavTrap : public ClapTrap
 {
-	ClapTrap clap1("bernard");
-	ClapTrap clap2("hyvette");
-	
-	clap1.attack(clap2.getName());
+    public:
 
-    if (clap1.getEnergyPoints() > 0)
-    {
-        clap2.takeDamage(clap1.getAttackDamage());
-    }
+        ScavTrap();
+        ScavTrap( std::string name );
+        ScavTrap( const ScavTrap& copy );
+        ScavTrap operator=( const ScavTrap& copy );
+        ~ScavTrap();
+        
+        void    guardGate();
+};
 
-	clap2.beRepaired(1);
-    
-	return (0);
-}
+#endif

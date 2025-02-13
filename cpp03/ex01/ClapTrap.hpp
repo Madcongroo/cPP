@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:59:03 by proton            #+#    #+#             */
-/*   Updated: 2025/02/12 16:57:59 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/13 12:35:41 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class   ClapTrap
 {
-	private:
+	protected:
 
 		std::string	_name;
 		int			_Hit_points;

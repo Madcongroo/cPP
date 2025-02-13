@@ -6,20 +6,20 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:59:00 by proton            #+#    #+#             */
-/*   Updated: 2025/02/13 11:58:26 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/13 11:57:37 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name("Default"), _Hit_points(10), _Energy_points(10), _Attack_damage(0)
+ClapTrap::ClapTrap(): _name("Default"), _Hit_points(100), _Energy_points(50), _Attack_damage(20)
 {
 	std::cout << "ClapTrap " << this->_name << " Default constructor called" << std::endl;
 
 	return ;
 }
 
-ClapTrap::ClapTrap( std::string name ) : _name(name), _Hit_points(10), _Energy_points(10), _Attack_damage(0)
+ClapTrap::ClapTrap( std::string name ) : _name(name), _Hit_points(100), _Energy_points(50), _Attack_damage(20)
 {
 	std::cout << "ClapTrap " << this->_name << " name assignation constructor being called" << std::endl;
 
