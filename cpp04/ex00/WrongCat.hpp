@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:26:16 by proton            #+#    #+#             */
-/*   Updated: 2025/02/14 12:33:09 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/14 14:58:55 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
 
