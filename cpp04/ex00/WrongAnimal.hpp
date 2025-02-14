@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 15:20:25 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 12:40:18 by proton           ###   ########.fr       */
+/*   Created: 2025/02/14 12:26:10 by proton            #+#    #+#             */
+/*   Updated: 2025/02/14 12:29:41 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int	main( void )
+#include <iostream>
+#include <string>
+
+class   WrongAnimal
 {
-	const WrongAnimal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-
-	i->makeSound();
-	j->makeSound();
+	public:
 	
-	meta->makeSound();
+		WrongAnimal();
+		WrongAnimal( std::string type );
+		WrongAnimal( const WrongAnimal& copy );
+		WrongAnimal operator=( const WrongAnimal& copy );
+		~WrongAnimal();
 
-	delete j;
-	delete i;
-	delete meta;
+		void		makeSound() const;
+		std::string	getType() const;
+
+	protected:
 	
-	return (0);
-}
+		std::string	_sound;
+		std::string	_type;
+};
+
+
+#endif

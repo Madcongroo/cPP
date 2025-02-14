@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 15:20:25 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 12:40:18 by proton           ###   ########.fr       */
+/*   Created: 2025/02/14 12:26:16 by proton            #+#    #+#             */
+/*   Updated: 2025/02/14 12:33:09 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
+
 #include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
-int	main( void )
+class	WrongCat : public WrongAnimal
 {
-	const WrongAnimal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	public:
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+		WrongCat();
+		WrongCat( std::string type );
+		WrongCat( const WrongCat& copy );
+		WrongCat operator=( const WrongCat& copy );
+		~WrongCat();
+};
 
-	i->makeSound();
-	j->makeSound();
-	
-	meta->makeSound();
-
-	delete j;
-	delete i;
-	delete meta;
-	
-	return (0);
-}
+#endif

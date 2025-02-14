@@ -3,14 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:32 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/13 15:24:54 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/14 12:03:05 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
-#include 
+#include <iostream>
+#include <string>
+
+class   Animal
+{
+	public:
+	
+		Animal();
+		Animal( std::string type );
+		Animal( const Animal& copy );
+		Animal operator=( const Animal& copy );
+		~Animal();
+
+		void		makeSound() const;
+		std::string	getType() const;
+
+	protected:
+	
+		std::string	_sound;
+		std::string	_type;
+};
+
+
+#endif
