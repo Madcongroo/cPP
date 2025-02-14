@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:32 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 12:03:05 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/14 16:02:34 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class   Animal
 
 	protected:
 	
-		std::string	_sound;
 		std::string	_type;
 };
 

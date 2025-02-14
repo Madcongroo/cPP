@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:23:57 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 11:59:42 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/14 16:02:14 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class	Cat : public Animal
 		Cat( const Cat& copy );
 		Cat operator=( const Cat& copy );
 		~Cat();
+
+		
 };
 
 #endif

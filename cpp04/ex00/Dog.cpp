@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:24:00 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 12:18:09 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/14 16:02:56 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,13 @@
 Dog::Dog() : Animal::Animal()
 {
 	std::cout << "Dog default constructor is called" << std::endl;
-    this->_sound = "Ouaf Ouaf";
-    this->_type = "Dog";
-
+	
 	return ;
 }
 
 Dog::Dog( std::string type ) : Animal::Animal( type )
 {
 	std::cout << "Assignation constructor called in class Dog" << std::endl;
-    this->_sound = "Ouaf Ouaf";
     
 	return ;
 }

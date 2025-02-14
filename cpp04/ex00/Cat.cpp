@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:23:54 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 12:18:21 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/14 16:02:43 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 Cat::Cat() : Animal::Animal()
 {
 	std::cout << "Cat default constructor is called" << std::endl;
-	this->_sound = "Miaou";
-	this->_type = "Cat";
 
 	return ;
 }
@@ -24,7 +22,6 @@ Cat::Cat() : Animal::Animal()
 Cat::Cat( std::string type ) : Animal::Animal( type )
 {
 	std::cout << "Assignation constructor called in class Cat" << std::endl;
-	this->_sound = "Miaou";
 
 	return ;
 }
