@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:23:57 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 16:02:14 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/14 17:07:13 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ class	Cat : public Animal
 		Cat operator=( const Cat& copy );
 		~Cat();
 
-		
+		void		makeSound() const;
+		std::string	getType() const;
 };
 
 #endif

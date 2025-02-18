@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:26:10 by proton            #+#    #+#             */
-/*   Updated: 2025/02/14 15:02:19 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/14 17:56:24 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ class   WrongAnimal
 		WrongAnimal( std::string type );
 		WrongAnimal( const WrongAnimal& copy );
 		WrongAnimal operator=( const WrongAnimal& copy );
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 
 		void		makeSound() const;
 		std::string	getType() const;
 
 	protected:
 	
-		std::string	_sound;
 		std::string	_type;
 };
 

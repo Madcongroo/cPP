@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:24:00 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 16:02:56 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/14 17:42:53 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal::Animal()
+Dog::Dog() : Animal::Animal("Dog")
 {
 	std::cout << "Dog default constructor is called" << std::endl;
-	
+
 	return ;
 }
 
@@ -48,4 +48,16 @@ Dog::~Dog()
 	std::cout << "Destructor called in class Dog" << std::endl;
 
 	return ;
+}
+
+void	Dog::makeSound() const
+{
+	std::cout << this->_type << " makes ouaf ouaf" << std::endl;
+
+	return ;
+}
+
+std::string	Dog::getType() const
+{
+	return (this->_type);
 }

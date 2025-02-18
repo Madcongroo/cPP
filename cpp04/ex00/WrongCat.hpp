@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:26:16 by proton            #+#    #+#             */
-/*   Updated: 2025/02/14 14:58:55 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/14 17:50:49 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class	WrongCat : public WrongAnimal
 		WrongCat( const WrongCat& copy );
 		WrongCat operator=( const WrongCat& copy );
 		~WrongCat();
+
+        void		makeSound() const;
+		std::string	getType() const;
 };
 
 #endif

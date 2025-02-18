@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:24:03 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 11:59:40 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/14 17:07:01 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class	Dog : public Animal
 		Dog( const Dog& copy );
 		Dog operator=( const Dog& copy );
 		~Dog();
+
+		void	makeSound() const;
+		std::string	getType() const;
 };
 
 #endif

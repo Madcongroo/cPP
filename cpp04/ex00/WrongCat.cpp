@@ -6,17 +6,15 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:26:14 by proton            #+#    #+#             */
-/*   Updated: 2025/02/14 12:29:19 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/14 17:52:05 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal::WrongAnimal()
+WrongCat::WrongCat() : WrongAnimal::WrongAnimal("WrongCat")
 {
 	std::cout << "WrongCat default constructor is called" << std::endl;
-	this->_sound = "Miaou";
-	this->_type = "WrongCat";
 
 	return ;
 }
@@ -24,8 +22,7 @@ WrongCat::WrongCat() : WrongAnimal::WrongAnimal()
 WrongCat::WrongCat( std::string type ) : WrongAnimal::WrongAnimal( type )
 {
 	std::cout << "Assignation constructor called in class WrongCat" << std::endl;
-	this->_sound = "Miaou";
-
+    
 	return ;
 }
 
@@ -51,4 +48,16 @@ WrongCat::~WrongCat()
 	std::cout << "Destructor called in class WrongCat" << std::endl;
 
 	return ;
+}
+
+void    WrongCat::makeSound() const
+{
+    std::cout << this->_type << " makes weird cat noises" << std::endl;
+
+    return ;
+}
+
+std::string	WrongCat::getType() const
+{
+    return (this->_type);
 }

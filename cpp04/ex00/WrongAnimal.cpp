@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:26:07 by proton            #+#    #+#             */
-/*   Updated: 2025/02/14 12:30:39 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/14 17:49:12 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 WrongAnimal::WrongAnimal() : _type("DEFAULT")
 {
     std::cout << "The default constructor of class animal" << std::endl;
-    this->_sound = "Grrrr";
 
     return ;
 }
@@ -23,7 +22,6 @@ WrongAnimal::WrongAnimal() : _type("DEFAULT")
 WrongAnimal::WrongAnimal( std::string type ) : _type(type)
 {
     std::cout << "Assignation in class animal is called" << std::endl;
-    this->_sound = "Grrrr";
 
     return ;
 }
@@ -61,7 +59,7 @@ std::string WrongAnimal::getType() const
 
 void    WrongAnimal::makeSound() const
 {
-    std::cout << this->_type << " makes " << this->_sound << std::endl;
+    std::cout << this->_type << " makes Wrong animal (Human noises) noises" << std::endl;
     
     return ;
 }

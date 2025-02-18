@@ -6,16 +6,15 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:35 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 12:15:33 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/14 17:46:29 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : _type("DEFAULT")
+Animal::Animal() : _type("Animal")
 {
     std::cout << "The default constructor of class animal" << std::endl;
-    this->_sound = "Grrrr";
 
     return ;
 }
@@ -23,7 +22,6 @@ Animal::Animal() : _type("DEFAULT")
 Animal::Animal( std::string type ) : _type(type)
 {
     std::cout << "Assignation in class animal is called" << std::endl;
-    this->_sound = "Grrrr";
 
     return ;
 }
@@ -61,7 +59,7 @@ std::string Animal::getType() const
 
 void    Animal::makeSound() const
 {
-    std::cout << this->_type << " makes " << this->_sound << std::endl;
+    std::cout << this->_type << " makes random angry noise"  << std::endl;
     
     return ;
 }

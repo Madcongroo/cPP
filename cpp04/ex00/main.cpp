@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:25 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 15:01:57 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/14 18:03:22 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,21 @@ int	main( void )
 
 	i->makeSound();
 	j->makeSound();
-	
 	meta->makeSound();
 
 	delete j;
 	delete i;
 	delete meta;
-	
+
+	const WrongAnimal* new_meta = new WrongAnimal();
+	const WrongAnimal* new_cat = new WrongCat();
+
+	std::cout << new_cat->getType() << " " << std::endl;
+	new_cat->makeSound();
+	new_meta->makeSound();
+
+	delete new_cat;
+	delete new_meta;
+
 	return (0);
 }
