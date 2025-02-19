@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   My_PhoneBook.hpp                                   :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/02/19 14:02:55 by bproton          ###   ########.fr       */
+/*   Created: 2025/02/13 15:24:03 by bproton           #+#    #+#             */
+/*   Updated: 2025/02/18 13:47:19 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#ifndef MY_PHONEBOOK_HPP
-#define MY_PHONEBOOK_HPP
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-#include <iostream>
-#include <string>
-#include <limits>
-#include <ctime>
-#include <cstdlib>
-#include "Contact.hpp"
-
-class MyPhoneBook
+class	Dog : public Animal
 {
-	private:
-		Contacts	contact[8];
-		double		time;
 	public:
-		MyPhoneBook( void );
-		~MyPhoneBook( void );
-		void	create_phonebook();
-		void	search_contact();
+
+		Dog();
+		Dog( std::string type );
+		Dog( const Dog& copy );
+		Dog operator=( const Dog& copy );
+		~Dog();
+
+		void	makeSound() const;
+		std::string	getType() const;
+
+	private:
+		Brain	*table;
 };
 
 #endif

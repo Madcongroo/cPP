@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   My_PhoneBook.hpp                                   :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/02/19 14:02:55 by bproton          ###   ########.fr       */
+/*   Created: 2025/02/18 13:47:55 by bproton           #+#    #+#             */
+/*   Updated: 2025/02/18 14:02:03 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
 
-#ifndef MY_PHONEBOOK_HPP
-#define MY_PHONEBOOK_HPP
-
-#include <iostream>
-#include <string>
-#include <limits>
-#include <ctime>
-#include <cstdlib>
-#include "Contact.hpp"
-
-class MyPhoneBook
+Brain::Brain()
 {
-	private:
-		Contacts	contact[8];
-		double		time;
-	public:
-		MyPhoneBook( void );
-		~MyPhoneBook( void );
-		void	create_phonebook();
-		void	search_contact();
-};
+    std::cout << "Default constructor of brain class called" << std::endl;
 
-#endif
+    return ;
+}
+
+Brain::Brain( const Brain& copy)
+{
+    std::cout << "copy constructor of brain class called" << std::endl;
+    *this->_ideas = *copy._ideas;
+    
+    return ;
+}
+
+Brain &Brain::operator=( const Brain& copy )
+{
+    std::cout << "copy operator in brain class called" << std::endl;
+    
+}

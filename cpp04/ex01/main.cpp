@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 14:41:25 by proton            #+#    #+#             */
-/*   Updated: 2025/01/24 14:21:03 by bproton          ###   ########.fr       */
+/*   Created: 2025/02/13 15:20:25 by bproton           #+#    #+#             */
+/*   Updated: 2025/02/18 13:30:50 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-Account::Account( int initial_deposit )
+int	main( void )
 {
-    
-}
 
-Account::Account( void )
-{
-    
-}
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-Account::~Account( void )
-{
-    
-}
+	delete j; //should not create a leak
+	delete i;
 
-void Account::displayAccountsInfos( void )
-{
-    
-}
-
-void    Account::displayStatus( void ) const
-{
-    
+return 0;
 }

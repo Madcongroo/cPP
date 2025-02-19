@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   My_PhoneBook.hpp                                   :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/02/19 14:02:55 by bproton          ###   ########.fr       */
+/*   Created: 2025/02/13 15:20:32 by bproton           #+#    #+#             */
+/*   Updated: 2025/02/14 17:46:24 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef MY_PHONEBOOK_HPP
-#define MY_PHONEBOOK_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
-#include <limits>
-#include <ctime>
-#include <cstdlib>
-#include "Contact.hpp"
 
-class MyPhoneBook
+class   Animal
 {
-	private:
-		Contacts	contact[8];
-		double		time;
 	public:
-		MyPhoneBook( void );
-		~MyPhoneBook( void );
-		void	create_phonebook();
-		void	search_contact();
+	
+		Animal();
+		Animal( std::string type );
+		Animal( const Animal& copy );
+		Animal operator=( const Animal& copy );
+		virtual ~Animal();
+
+		virtual void	makeSound() const;
+		std::string		getType() const;
+
+	protected:
+	
+		std::string	_type;
 };
+
 
 #endif

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   My_PhoneBook.hpp                                   :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:20:54 by proton            #+#    #+#             */
-/*   Updated: 2025/02/19 14:02:55 by bproton          ###   ########.fr       */
+/*   Created: 2025/02/18 13:37:34 by bproton           #+#    #+#             */
+/*   Updated: 2025/02/18 14:01:56 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef MY_PHONEBOOK_HPP
-#define MY_PHONEBOOK_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
 #include <string>
-#include <limits>
-#include <ctime>
-#include <cstdlib>
-#include "Contact.hpp"
 
-class MyPhoneBook
+class   Brain
 {
-	private:
-		Contacts	contact[8];
-		double		time;
 	public:
-		MyPhoneBook( void );
-		~MyPhoneBook( void );
-		void	create_phonebook();
-		void	search_contact();
+		Brain();
+		Brain( const Brain& copy );
+		Brain &operator=( const Brain& copy );
+		~Brain();
+		
+		std::string	_ideas[100];
+
 };
 
 #endif
