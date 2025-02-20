@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:43 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/20 11:27:00 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/20 14:09:09 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ void	Weapon::setType( std::string new_type)
 {
 	this->_type.clear();
 	this->_type = new_type;
-	std::cout << this->_type << std::endl;
 	return ;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:33:05 by proton            #+#    #+#             */
-/*   Updated: 2025/02/11 22:26:06 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/20 15:54:37 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ class Fixed
 		int					toInt( void ) const;
 		int					getRawBits( void ) const;
 		void				setRawBits( int const raw );
-		static Fixed&			min(Fixed& a, Fixed& b);
+		static Fixed&		min(Fixed& a, Fixed& b);
 		static const Fixed&	min(const Fixed& a, const Fixed& b);
-		static Fixed&			max(Fixed& a, Fixed& b);
+		static Fixed&		max(Fixed& a, Fixed& b);
 		static const Fixed&	max(const Fixed& a, const Fixed& b);
 
 		Fixed operator+(const Fixed& copy) const;

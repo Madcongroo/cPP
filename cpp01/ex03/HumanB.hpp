@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:37 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/30 10:24:57 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/20 14:32:35 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ class HumanB
 	public:
 		HumanB( std::string name );
 		~HumanB( void );
-		void	setWeapon( Weapon WeaponType );
+		void	setWeapon( Weapon& WeaponType );
+		Weapon*	getType();
 		void	attack() const;
 };
 

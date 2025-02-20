@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:34 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/20 11:37:53 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/20 14:33:07 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,16 @@ HumanB::~HumanB( void )
 	return ;
 }
 
-void	HumanB::setWeapon( Weapon WeaponType )
+void	HumanB::setWeapon( Weapon& WeaponType )
 {
-	Weapon* NewWeapon = new Weapon(WeaponType.getType());
-	if (!NewWeapon)
-		return ;
-	this->_Weapon = NewWeapon;
+	
+	this->_Weapon = &WeaponType;
 	return ;
+}
+
+Weapon* HumanB::getType()
+{
+	return (this->_Weapon);
 }
 
 void    HumanB::attack( void ) const

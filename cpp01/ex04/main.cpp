@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:26:15 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/05 11:58:08 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/20 15:21:11 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	handle_line(std::string line, std::ofstream &out_f, const std::string s1, const std::string s2)
 {
 	int	i = 0;
-	int	i_start = 0;
+	std::size_t	i_start = 0;
 	
 	while (line[i])
 	{
@@ -24,7 +24,8 @@ void	handle_line(std::string line, std::ofstream &out_f, const std::string s1, c
 			break ;
 		line.erase(i_start, s1.length());
 		line.insert(i_start, s2);
-		i += (i_start + s2.length());
+		std::cout << i_start << std::endl;
+		i = i_start;
 	}
 	out_f << line << std::endl;
 }
@@ -32,11 +33,10 @@ void	handle_line(std::string line, std::ofstream &out_f, const std::string s1, c
 void	transfer_to_file(std::ofstream &out_f, std::ifstream &f, const std::string s1, const std::string s2)
 {
 	std::string	line;
-	int	i_start;
+	int	i_start = 0;
 
 	while (std::getline(f, line))
 	{
-		i_start = line.find(s1, i_start);
 		if ((line.find(s1, i_start)) == std::string::npos)
 			out_f << line << std::endl;
 		else
@@ -68,6 +68,7 @@ int	main(int ac, char **av)
 	}
 	
 	transfer_to_file(out_f, f, av[2], av[3]);
+	f.close();
 	out_f.close();
 	
 	return (0);
