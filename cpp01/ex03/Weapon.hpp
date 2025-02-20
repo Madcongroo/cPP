@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:46 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/12 14:16:04 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:19:25 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ class   Weapon
         const std::string& getType(void) const;
         void        setType( std::string type );
 };
-
-Weapon  w1("salut");
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 14:45:49 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/28 12:14:10 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/20 10:54:15 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Zombie::Zombie( std::string name )
 {
     this->_name = name;
-    std::cout << name << ": is being created!" << std::endl;
+    std::cout << name << " is being created!" << std::endl;
     return ;
 }
 

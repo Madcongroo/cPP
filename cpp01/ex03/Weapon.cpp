@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:43 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/12 14:16:47 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:27:00 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Weapon::Weapon()
 
 Weapon::Weapon( std::string type ) : _type(type)
 {
+	std::cout << "assignator constructor in weapon class" << std::endl;
 	return ;
 }
 
@@ -36,7 +37,6 @@ const std::string& Weapon::getType( void ) const
 
 void	Weapon::setType( std::string new_type)
 {
-	std::cout << this->_type << " : just before cleaning" << std::endl;
 	this->_type.clear();
 	this->_type = new_type;
 	std::cout << this->_type << std::endl;

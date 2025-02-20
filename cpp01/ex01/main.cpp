@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 12:47:00 by proton            #+#    #+#             */
-/*   Updated: 2025/01/29 10:46:29 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/20 11:05:44 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ int main( void )
 	Zombie		*zombieH;
 
 	std::cout << "first enter a number" << std::endl;
-	std::cin >> num;
-	if (isdigit(num))
+	if (!(std::cin >> num))
 	{
-		std::cerr << "are you kidding me? that aint a number!" << std::endl;
+		std::cerr << "that aint no number!" << std::endl;
 		return (1);
 	}
 	std::cout << "nice, now enter a name that you like" << std::endl;

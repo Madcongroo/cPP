@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:59:34 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/30 10:47:15 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/20 11:37:53 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 HumanB::HumanB( std::string name )
 {
 	this->_name = name;
+	std::cout << "Default constructor in class HUMAN B" << std::endl;
+	
 	return ;
 }
 
@@ -36,9 +38,9 @@ void	HumanB::setWeapon( Weapon WeaponType )
 void    HumanB::attack( void ) const
 {
 	if (!this->_Weapon->getType().empty())
-		std::cout << this->_name << "attacks with" << this->_Weapon->getType() << std::endl;
+		std::cout << this->_name << " attacks with " << this->_Weapon->getType() << std::endl;
 	else
-		std::cout << this->_name << "attacks with fists due to not having a weapon" << std::endl;
+		std::cout << this->_name << " attacks with fists due to not having a weapon" << std::endl;
 	return ;
 }
 
