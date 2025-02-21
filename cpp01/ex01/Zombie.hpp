@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 12:51:02 by proton            #+#    #+#             */
-/*   Updated: 2025/01/29 10:40:37 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:10:02 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 class Zombie
 {
 	private:
-	
+
 		std::string _name;
-	
+
 	public:
         Zombie( void );
 		Zombie( std::string name );

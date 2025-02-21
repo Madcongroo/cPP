@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:35 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 17:46:29 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:43:26 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ std::string Animal::getType() const
 void    Animal::makeSound() const
 {
     std::cout << this->_type << " makes random angry noise"  << std::endl;
-    
+
     return ;
 }

@@ -6,7 +6,7 @@
 /*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:26:15 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/20 15:21:11 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/21 15:46:09 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	handle_line(std::string line, std::ofstream &out_f, const std::string s1, c
 			break ;
 		line.erase(i_start, s1.length());
 		line.insert(i_start, s2);
-		std::cout << i_start << std::endl;
 		i = i_start;
 	}
 	out_f << line << std::endl;
@@ -59,8 +58,8 @@ int	main(int ac, char **av)
 		std::cerr << "Error with opening the file" << std::endl;
 		return (1);
 	}
-	
-	std::ofstream out_f("result.txt", std::ios::trunc);
+	std::string replace(".replace");
+	std::ofstream out_f((av[1] + replace).c_str(), std::ios::trunc);
 	if (!out_f)
 	{
 		std::cerr << "Error creating the file" << std::endl;

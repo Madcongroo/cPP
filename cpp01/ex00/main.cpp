@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 14:45:41 by bproton           #+#    #+#             */
-/*   Updated: 2025/01/28 13:59:43 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:01:33 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int main( void )
 			std::cout << "what would you name your zombie?" << std::endl;
 			std::cin >> name;
 			randomChump(name);
-			name.clear();
-			entry.clear();
 		}
 		else if (entry == "NEWZOMB")
 		{

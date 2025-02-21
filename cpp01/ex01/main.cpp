@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 12:47:00 by proton            #+#    #+#             */
-/*   Updated: 2025/02/20 11:05:44 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:11:53 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,4 @@ int main( void )
 		zombieH[i].announce();
 	}
 	delete[](zombieH);
-	
 }
