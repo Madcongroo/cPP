@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:24:03 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/18 13:47:19 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/23 11:04:54 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ class	Dog : public Animal
 		Dog();
 		Dog( std::string type );
 		Dog( const Dog& copy );
-		Dog operator=( const Dog& copy );
+		Dog& operator=( const Dog& copy );
 		~Dog();
 
 		void	makeSound() const;
 		std::string	getType() const;
 
 	private:
-		Brain	*table;
+	
+		Brain	*_table;
 };
 
 #endif

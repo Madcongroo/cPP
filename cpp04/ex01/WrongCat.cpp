@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:26:14 by proton            #+#    #+#             */
-/*   Updated: 2025/02/14 17:52:05 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/23 11:06:02 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ WrongCat::WrongCat( const WrongCat& copy ) : WrongAnimal::WrongAnimal( copy )
 	return ;
 }
 
-WrongCat WrongCat::operator=( const WrongCat& copy )
+WrongCat& WrongCat::operator=( const WrongCat& copy )
 {
 	std::cout << "Operator constructor called in class WrongCat" << std::endl;
 

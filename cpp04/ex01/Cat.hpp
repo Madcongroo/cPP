@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:23:57 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/18 13:47:47 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/23 11:04:52 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	Cat : public Animal
 		Cat();
 		Cat( std::string type );
 		Cat( const Cat& copy );
-		Cat operator=( const Cat& copy );
+		Cat& operator=( const Cat& copy );
 		~Cat();
 
 		void		makeSound() const;
@@ -31,7 +31,7 @@ class	Cat : public Animal
 
 	private:
 
-		Brain*	table;
+		Brain*	_table;
 };
 
 #endif

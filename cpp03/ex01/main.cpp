@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:59:08 by proton            #+#    #+#             */
-/*   Updated: 2025/02/13 14:22:21 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/24 11:28:45 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,15 @@ int	main( void )
     {
         clap2.takeDamage(clap1.getAttackDamage());
     }
+
+	scav1.attack(scav2.getName());
+    if (scav1.getEnergyPoints() > 0)
+    {
+        scav2.takeDamage(scav1.getAttackDamage());
+    }
+	
 	scav2.guardGate();
+	scav1.guardGate();
 	clap2.beRepaired(1);
     
 	return (0);

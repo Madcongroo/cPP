@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:25:31 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/13 15:11:39 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/24 11:36:57 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ FragTrap::FragTrap( const FragTrap& copy ) : ClapTrap::ClapTrap( copy )
     return ;
 }
 
-FragTrap FragTrap::operator=( const FragTrap& copy )
+FragTrap& FragTrap::operator=( const FragTrap& copy )
 {
     std::cout << "FragTrap " << this->_name << " copy operator being called" << std::endl;
     
@@ -60,4 +60,58 @@ void	FragTrap::highFivesGuys( void )
     std::cout << "FragTrap request for a positive highfive" << std::endl;
 
     return ;
+}
+
+void	FragTrap::attack( const std::string& target )
+{
+	if (this->_Energy_points <= 0 || this->_Hit_points <= 0)
+	{
+		std::cout << "FragTrap " << this->_name << " cant do nothing" << std::endl;
+		return ;
+	}
+
+	std::cout << "FragTrap " << this->_name << " attacks " << target << " causing "
+		<< this->_Attack_damage  << " points of damage!" << std::endl;
+	std::cout << "FragTrap " << this->_name << " looses " << 1 << " energy points" << std::endl;
+	this->_Energy_points -= 1;
+	std::cout << "FragTrap " << this->_name << " has now " << this->_Energy_points << " energy points" << std::endl;
+	
+	return ;
+}
+
+void	FragTrap::takeDamage( unsigned int amount )
+{
+	if (this->_Hit_points <= 0)
+	{
+		std::cout << "FragTrap " << this->_name << " cant be hurt anymore" << std::endl;
+		return ;
+	}
+	std::cout << "FragTrap " << this->_name << " takes " << amount << " of damage" << std::endl;
+
+	this->_Hit_points -= amount;
+
+	std::cout << "FragTrap " << this->_name << " has now " << this->_Hit_points << " hp" << std::endl;
+
+	return ;
+}
+
+void	FragTrap::beRepaired( unsigned int amount )
+{
+	if (this->_Energy_points <= 0 || this->_Hit_points <= 0)
+	{
+		std::cout << "FragTrap " << this->_name << " cant heal him/herself" << std::endl;
+		return ;
+	}
+
+	std::cout << "FragTrap " << this->_name << " heals him/herself for " << amount << " of hp" << std::endl;
+	
+	this->_Hit_points += amount;
+
+	std::cout << "FragTrap " << this->_name << " has now " << this->_Hit_points << " hp" << std::endl;
+
+	std::cout << "FragTrap " << this->_name << " looses " << 1 << " energy points" << std::endl;
+	this->_Energy_points -= 1;
+	std::cout << "FragTrap " << this->_name << " has now " << this->_Energy_points << " energy points" << std::endl;
+
+	return ;
 }

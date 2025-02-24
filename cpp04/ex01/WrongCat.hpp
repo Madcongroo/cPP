@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:26:16 by proton            #+#    #+#             */
-/*   Updated: 2025/02/14 17:50:49 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/23 11:06:05 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	WrongCat : public WrongAnimal
 		WrongCat();
 		WrongCat( std::string type );
 		WrongCat( const WrongCat& copy );
-		WrongCat operator=( const WrongCat& copy );
+		WrongCat& operator=( const WrongCat& copy );
 		~WrongCat();
 
         void		makeSound() const;

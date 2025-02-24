@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:59:03 by proton            #+#    #+#             */
-/*   Updated: 2025/02/13 12:35:41 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/24 11:34:51 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ class   ClapTrap
 		ClapTrap( std::string name );
 		ClapTrap( const ClapTrap& copy );
 		ClapTrap& operator=( const ClapTrap& copy );
-		~ClapTrap();
+		virtual ~ClapTrap();
 
-		void	attack( const std::string& target );
-		void	takeDamage( unsigned int amount );
-		void	beRepaired( unsigned int amount );
+		virtual void	attack( const std::string& target );
+		virtual void	takeDamage( unsigned int amount );
+		virtual void	beRepaired( unsigned int amount );
 		
 		std::string	getName( void ) const;
 		int			getHitPoints( void ) const;

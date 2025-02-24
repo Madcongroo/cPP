@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:47:55 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/18 14:02:03 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/23 10:48:33 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Brain::Brain()
 Brain::Brain( const Brain& copy)
 {
     std::cout << "copy constructor of brain class called" << std::endl;
-    *this->_ideas = *copy._ideas;
+    *this = copy;
     
     return ;
 }
@@ -30,5 +30,15 @@ Brain::Brain( const Brain& copy)
 Brain &Brain::operator=( const Brain& copy )
 {
     std::cout << "copy operator in brain class called" << std::endl;
+    if (this != &copy)
+        *this->_ideas = *copy._ideas;
     
+    return ;
+}
+
+Brain::~Brain()
+{
+    std::cout << "destructor of class brain being called" << std::endl;
+
+    return ;
 }

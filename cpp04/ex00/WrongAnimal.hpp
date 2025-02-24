@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:26:10 by proton            #+#    #+#             */
-/*   Updated: 2025/02/14 17:56:24 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/23 10:35:17 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class   WrongAnimal
 		WrongAnimal( std::string type );
 		WrongAnimal( const WrongAnimal& copy );
 		WrongAnimal operator=( const WrongAnimal& copy );
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 
 		void		makeSound() const;
 		std::string	getType() const;

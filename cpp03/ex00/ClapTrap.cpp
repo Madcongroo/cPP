@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:59:00 by proton            #+#    #+#             */
-/*   Updated: 2025/02/13 11:58:26 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/24 11:03:31 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(): _name("Default"), _Hit_points(10), _Energy_points(10), _Attack_damage(0)
 {
-	std::cout << "ClapTrap " << this->_name << " Default constructor called" << std::endl;
+	std::cout << "ClapTrap" << " Default constructor called" << std::endl;
 
 	return ;
 }
@@ -30,10 +30,7 @@ ClapTrap::ClapTrap( const ClapTrap& copy)
 {
 	std::cout << "Copy class called" << std::endl;
 
-	this->_name = copy._name;
-	this->_Attack_damage = copy._Attack_damage;
-	this->_Energy_points = copy._Energy_points;
-	this->_Hit_points = copy._Hit_points;
+	*this = copy;
 
 	return ;
 }

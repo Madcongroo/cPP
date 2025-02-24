@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:35 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 17:46:29 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/23 10:43:40 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ Animal::Animal( const Animal& copy )
 {
     std::cout << "Copy constructor being called in class animal" << std::endl;
 
-    this->_type = copy._type;
+    *this = copy;
 
     return ;
 }
 
-Animal Animal::operator=( const Animal& copy )
+Animal& Animal::operator=( const Animal& copy )
 {
     std::cout << "Copy operator being called in class animal" << std::endl;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:04:08 by proton            #+#    #+#             */
-/*   Updated: 2025/02/13 14:23:35 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/24 11:35:49 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ScavTrap::ScavTrap( const ScavTrap& copy ) : ClapTrap::ClapTrap( copy )
     return ;
 }
 
-ScavTrap ScavTrap::operator=( const ScavTrap& copy )
+ScavTrap& ScavTrap::operator=( const ScavTrap& copy )
 {
     std::cout << "ScavTrap " << this->_name << " copy operator constructor being called" << std::endl;
 
@@ -59,4 +59,58 @@ void    ScavTrap::guardGate()
     std::cout << "ScavTrap is now in gate keeper mode" << std::endl;
 
     return ;
+}
+
+void	ScavTrap::attack( const std::string& target )
+{
+	if (this->_Energy_points <= 0 || this->_Hit_points <= 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " cant do nothing" << std::endl;
+		return ;
+	}
+
+	std::cout << "ScavTrap " << this->_name << " attacks " << target << " causing "
+		<< this->_Attack_damage  << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " looses " << 1 << " energy points" << std::endl;
+	this->_Energy_points -= 1;
+	std::cout << "ScavTrap " << this->_name << " has now " << this->_Energy_points << " energy points" << std::endl;
+	
+	return ;
+}
+
+void	ScavTrap::takeDamage( unsigned int amount )
+{
+	if (this->_Hit_points <= 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " cant be hurt anymore" << std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap " << this->_name << " takes " << amount << " of damage" << std::endl;
+
+	this->_Hit_points -= amount;
+
+	std::cout << "ScavTrap " << this->_name << " has now " << this->_Hit_points << " hp" << std::endl;
+
+	return ;
+}
+
+void	ScavTrap::beRepaired( unsigned int amount )
+{
+	if (this->_Energy_points <= 0 || this->_Hit_points <= 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " cant heal him/herself" << std::endl;
+		return ;
+	}
+
+	std::cout << "ScavTrap " << this->_name << " heals him/herself for " << amount << " of hp" << std::endl;
+	
+	this->_Hit_points += amount;
+
+	std::cout << "ScavTrap " << this->_name << " has now " << this->_Hit_points << " hp" << std::endl;
+
+	std::cout << "ScavTrap " << this->_name << " looses " << 1 << " energy points" << std::endl;
+	this->_Energy_points -= 1;
+	std::cout << "ScavTrap " << this->_name << " has now " << this->_Energy_points << " energy points" << std::endl;
+
+	return ;
 }
