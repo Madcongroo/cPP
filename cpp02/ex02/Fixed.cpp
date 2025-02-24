@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:33:02 by proton            #+#    #+#             */
-/*   Updated: 2025/02/11 22:46:51 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/22 12:35:57 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ Fixed Fixed::operator++(int)
 {
 	Fixed	temp = *this;
 
-	this->_fixed_point++;
+	++this->_fixed_point;
 	return (temp);
 }
 
@@ -169,7 +169,7 @@ Fixed Fixed::operator--(int)
 {
 	Fixed	temp = *this;
 
-	this->_fixed_point--;
+	--this->_fixed_point;
 	return (temp);
 }
 

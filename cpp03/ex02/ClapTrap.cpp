@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:59:00 by proton            #+#    #+#             */
-/*   Updated: 2025/02/23 10:39:34 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/24 13:38:43 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name("Default"), _Hit_points(100), _Energy_points(100), _Attack_damage(30)
+ClapTrap::ClapTrap(): _name("Default"), _Hit_points(10), _Energy_points(10), _Attack_damage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " Default constructor called" << std::endl;
 
 	return ;
 }
 
-ClapTrap::ClapTrap( std::string name ) : _name(name), _Hit_points(100), _Energy_points(100), _Attack_damage(30)
+ClapTrap::ClapTrap( std::string name ) : _name(name), _Hit_points(10), _Energy_points(10), _Attack_damage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " name assignation constructor being called" << std::endl;
 

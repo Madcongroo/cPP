@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:59:08 by proton            #+#    #+#             */
-/*   Updated: 2025/02/24 11:28:45 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/24 13:47:38 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main( void )
 	ClapTrap clap2("base2");
 	ScavTrap scav1("derived1");
 	ScavTrap scav2(scav1);
+	ScavTrap scav3("scavence");
 	
 	clap1.attack(clap2.getName());
     if (clap1.getEnergyPoints() > 0)
@@ -30,10 +31,19 @@ int	main( void )
     {
         scav2.takeDamage(scav1.getAttackDamage());
     }
+	scav3.attack(clap1.getName());
+    if (clap1.getEnergyPoints() > 0)
+    {
+        clap1.takeDamage(scav3.getAttackDamage());
+    }
 	
 	scav2.guardGate();
 	scav1.guardGate();
+	scav3.guardGate();
+	scav3.beRepaired(10);
+	
 	clap2.beRepaired(1);
+	clap1.beRepaired(10);
     
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:25:31 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/24 11:36:57 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/24 14:01:06 by bproton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,20 @@
 FragTrap::FragTrap() : ClapTrap::ClapTrap()
 {
     std::cout << "FragTrap " << this->_name << " default constructor called" << std::endl;
-
+	this->_Hit_points = 100;
+	this->_Energy_points = 100;
+	this->_Attack_damage = 30;
+	
     return ;
 }
 
 FragTrap::FragTrap( std::string name ) : ClapTrap::ClapTrap( name )
 {
     std::cout << "FragTrap " << this->_name << " assignator being called" << std::endl;
-
+	this->_Hit_points = 100;
+	this->_Energy_points = 100;
+	this->_Attack_damage = 30;
+	
     return ;
 }
 
@@ -57,7 +63,7 @@ FragTrap::~FragTrap()
 		
 void	FragTrap::highFivesGuys( void )
 {
-    std::cout << "FragTrap request for a positive highfive" << std::endl;
+    std::cout << "FragTrap " << this->_name << " request for a positive highfive" << std::endl;
 
     return ;
 }
