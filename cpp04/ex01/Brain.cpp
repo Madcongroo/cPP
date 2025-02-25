@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:47:55 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/23 10:48:33 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/25 11:36:32 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,21 @@ Brain::Brain( const Brain& copy)
 Brain &Brain::operator=( const Brain& copy )
 {
     std::cout << "copy operator in brain class called" << std::endl;
+
     if (this != &copy)
-        *this->_ideas = *copy._ideas;
+    {
+        for (size_t i = 0; i < copy._ideas->size(); i++)
+		this->_ideas[i] = copy._ideas[i].substr();
+    }
     
-    return ;
+    return (*this);
 }
 
 Brain::~Brain()
 {
     std::cout << "destructor of class brain being called" << std::endl;
+
+    // delete[] _ideas;
 
     return ;
 }

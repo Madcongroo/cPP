@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:23:54 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/14 17:46:56 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/24 16:40:07 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Cat::Cat( const Cat& copy ) : Animal::Animal( copy )
 	return ;
 }
 
-Cat Cat::operator=( const Cat& copy )
+Cat& Cat::operator=( const Cat& copy )
 {
 	std::cout << "Operator constructor called in class Cat" << std::endl;
 

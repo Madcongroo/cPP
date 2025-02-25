@@ -6,13 +6,13 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:24:00 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/23 11:30:07 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/25 11:36:44 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal::Animal("Dog"), _table(new Brain())
+Dog::Dog() : Animal::Animal("Dog"), _thoughts(new Brain())
 {
 	std::cout << "Dog default constructor is called" << std::endl;
 
@@ -47,7 +47,7 @@ Dog::~Dog()
 {
 	std::cout << "Destructor called in class Dog" << std::endl;
 
-	delete _table;
+	delete _thoughts;
 
 	return ;
 }

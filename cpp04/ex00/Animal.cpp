@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bproton <bproton@student.42.fr>            +#+  +:+       +#+        */
+/*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:35 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/21 13:43:26 by bproton          ###   ########.fr       */
+/*   Updated: 2025/02/24 16:44:05 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ Animal::Animal( const Animal& copy )
 {
     std::cout << "Copy constructor being called in class animal" << std::endl;
 
-    this->_type = copy._type;
+    *this = copy;
 
     return ;
 }
 
-Animal Animal::operator=( const Animal& copy )
+Animal& Animal::operator=( const Animal& copy )
 {
     std::cout << "Copy operator being called in class animal" << std::endl;
 

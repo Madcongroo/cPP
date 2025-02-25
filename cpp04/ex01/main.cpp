@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:25 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/23 12:15:01 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/25 11:35:35 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,25 @@ int	main( void )
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	Animal *table[10];
+	std::cout << i->getType() << std::endl;
+	std::cout << j->getType() << std::endl;
 
-	for (int i = 0; i < 10; i++)
-	{
-		if (i < 4)
-			table[i] = new Dog();
-		else
-			table[i] = new Cat();
-	}
+	// Animal *table[9];
 
-	delete[] *table;
+	// for (int i = 0; i != 9; i++)
+	// {
+	// 	char c = i;
+	// 	if (i < 4)
+	// 		table[i] = new Dog("cat " + c);
+	// 	else
+	// 		table[i] = new Cat("dog " + c);
+	// }
 
-	delete j; //should not create a leak
+	
+
+
+	delete j;
 	delete i;
 
-return 0;
+	return 0;
 }

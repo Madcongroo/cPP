@@ -6,13 +6,13 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:23:54 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/23 12:41:38 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/25 11:36:37 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal::Animal("Cat"), _table(new Brain())
+Cat::Cat() : Animal::Animal("Cat"), _thoughts(new Brain())
 {
 	std::cout << "Cat default constructor is called" << std::endl;
 
@@ -39,6 +39,9 @@ Cat& Cat::operator=( const Cat& copy )
 
 	if (this != &copy)
 		this->_type = copy._type;
+		
+	for (size_t i = 0; i < copy._thoughts->_ideas->size(); i++)
+		this->_thoughts->_ideas[i] = copy._thoughts->_ideas[i].substr();
 	
 	return (*this);
 }
@@ -47,7 +50,7 @@ Cat::~Cat()
 {
 	std::cout << "Destructor called in class Cat" << std::endl;
 
-	delete _table;
+	delete _thoughts;
 
 	return ;
 }

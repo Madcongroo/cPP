@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bproton <bproton@student.42.fr>            +#+  +:+       +#+         #
+#    By: proton <proton@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/13 15:20:29 by bproton           #+#    #+#              #
-#    Updated: 2025/02/24 14:04:59 by bproton          ###   ########.fr        #
+#    Updated: 2025/02/24 16:58:45 by proton           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	=	Animal
+NAME	=	Brain
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp

@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:24:03 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/23 11:04:54 by proton           ###   ########.fr       */
+/*   Updated: 2025/02/24 17:14:03 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class	Dog : public Animal
 
 	private:
 	
-		Brain	*_table;
+		Brain	*_thoughts;
 };
 
 #endif
