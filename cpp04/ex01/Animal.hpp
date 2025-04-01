@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:32 by bproton           #+#    #+#             */
-/*   Updated: 2025/02/23 10:43:44 by proton           ###   ########.fr       */
+/*   Updated: 2025/03/31 17:42:23 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class   Animal
 		virtual ~Animal();
 
 		virtual void	makeSound() const;
+		virtual void	getIdeas() const = 0;
 		std::string		getType() const;
 
 	protected:
