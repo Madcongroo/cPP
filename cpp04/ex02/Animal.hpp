@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 12:26:10 by proton            #+#    #+#             */
-/*   Updated: 2025/02/24 16:44:41 by proton           ###   ########.fr       */
+/*   Created: 2025/02/13 15:20:32 by bproton           #+#    #+#             */
+/*   Updated: 2025/04/02 11:34:20 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class   WrongAnimal
+class   Animal
 {
 	public:
 	
-		WrongAnimal();
-		WrongAnimal( std::string type );
-		WrongAnimal( const WrongAnimal& copy );
-		WrongAnimal& operator=( const WrongAnimal& copy );
-		~WrongAnimal();
+		Animal();
+		Animal( std::string type );
+		Animal( const Animal& copy );
+		Animal& operator=( const Animal& copy );
+		virtual ~Animal();
 
-		void		makeSound() const;
-		std::string	getType() const;
+		virtual void		makeSound() const = 0;
+		virtual void		getIdeas(int i ) const = 0;
+		virtual void		setIdea( std::string &idea, int i ) = 0;
+		virtual std::string	getType() const = 0;
 
 	protected:
 	

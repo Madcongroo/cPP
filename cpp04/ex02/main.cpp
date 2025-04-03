@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:20:25 by bproton           #+#    #+#             */
-/*   Updated: 2025/04/03 10:56:16 by proton           ###   ########.fr       */
+/*   Updated: 2025/04/02 13:52:58 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 
 int	main( void )
 {
-	const Animal*	j = new Dog();
+    const Animal*	j = new Dog();
 	const Animal*	i = new Cat();
-
 
 	std::cout << i->getType() << std::endl;
 	std::cout << j->getType() << std::endl;

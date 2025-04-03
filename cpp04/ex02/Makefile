@@ -6,12 +6,12 @@
 #    By: proton <proton@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/13 15:20:29 by bproton           #+#    #+#              #
-#    Updated: 2025/04/02 11:16:27 by proton           ###   ########.fr        #
+#    Updated: 2025/04/03 10:57:01 by proton           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	=	Brain
+NAME	=	DerivedBrain
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp

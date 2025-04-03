@@ -6,7 +6,7 @@
 /*   By: proton <proton@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:23:57 by bproton           #+#    #+#             */
-/*   Updated: 2025/03/28 17:04:07 by proton           ###   ########.fr       */
+/*   Updated: 2025/04/02 00:54:51 by proton           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class	Cat : public Animal
 		~Cat();
 
 		void		makeSound() const;
-		void		getIdeas() const;
+		void		getIdeas( int i ) const;
+		void		setIdea( std::string &idea, int i );
 		std::string	getType() const;
 
 	private:
