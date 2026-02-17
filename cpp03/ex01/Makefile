@@ -6,14 +6,17 @@
 #    By: proton <proton@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/11 22:53:54 by proton            #+#    #+#              #
-#    Updated: 2025/02/12 17:40:45 by proton           ###   ########.fr        #
+#    Updated: 2026/02/17 09:24:29 by proton           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	Scav
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp
+INCDIR	=	include/
+SRCDIR	=	src/
+SRC		=	$(SRCDIR)main.cpp $(SRCDIR)ClapTrap.cpp $(SRCDIR)ScavTrap.cpp
+INCL	=	$(INCDIR)ClapTrap.hpp $(INCDIR)ScavTrap.hpp
 OBJS	=	$(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -21,7 +24,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(INCL)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

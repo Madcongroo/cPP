@@ -3,17 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bproton <bproton@student.42.fr>            +#+  +:+       +#+         #
+#    By: proton <proton@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:35:51 by bproton           #+#    #+#              #
-#    Updated: 2025/01/24 15:35:53 by bproton          ###   ########.fr        #
+#    Updated: 2026/02/17 09:14:48 by proton           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	megaphone
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
-SRC		 	=	megaphone.cpp
+INCDIR		=	include/
+SRCDIR		=	src/
+SRC		 	=	$(SRCDIR)megaphone.cpp
 
 OBJ			=	$(SRC:.cpp=.o)
 

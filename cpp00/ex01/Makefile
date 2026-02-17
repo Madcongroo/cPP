@@ -3,17 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bproton <bproton@student.42.fr>            +#+  +:+       +#+         #
+#    By: proton <proton@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 15:35:41 by bproton           #+#    #+#              #
-#    Updated: 2025/02/12 13:28:08 by bproton          ###   ########.fr        #
+#    Updated: 2026/02/17 09:11:30 by proton           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	Phonebook
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-SRC		=	main.cpp My_PhoneBook.cpp Contact.cpp
+INCDIR	=	include/
+SRCDIR	=	src/
+SRC		=	$(SRCDIR)main.cpp $(SRCDIR)My_PhoneBook.cpp $(SRCDIR)Contact.cpp
+INCL	=	$(INCDIR)Contact.hpp $(INCDIR)My_PhoneBook.hpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
@@ -22,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(INCL)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

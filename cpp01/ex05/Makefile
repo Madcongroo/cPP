@@ -6,14 +6,17 @@
 #    By: proton <proton@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 17:51:42 by proton            #+#    #+#              #
-#    Updated: 2025/02/04 22:34:59 by proton           ###   ########.fr        #
+#    Updated: 2026/02/17 09:37:51 by proton           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	Harl
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-SRC		=	main.cpp Harl.cpp
+INCDIR	=	include/
+SRCDIR	=	src/
+SRC		=	$(SRCDIR)main.cpp $(SRCDIR)Harl.cpp
+INCL	=	$(INCDIR)Harl.hpp
 OBJS	=	$(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -21,7 +24,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(INCL)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
